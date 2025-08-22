@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DC7 Trading System - Hướng Dẫn Từ Tổng Quan Đến Chi Tiết</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        @media print {
+            body { font-size: 12px; }
+            .no-print { display: none; }
+        }
+        .trading-table { 
+            border-collapse: collapse; 
+            width: 100%; 
+        }
+        .trading-table th, .trading-table td { 
+            border: 1px solid #333; 
+            padding: 8px; 
+            text-align: left; 
+        }
+        .trading-table th { 
+            background-color: #f0f0f0; 
+            font-weight: bold; 
+        }
+        .section-divider {
+            border-bottom: 3px solid #2563eb;
+            margin: 40px 0 20px 0;
+            padding-bottom: 10px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+<!-- HEADER -->
+<header class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-8">
+    <div class="container mx-auto px-4 text-center">
+        <h1 class="text-4xl font-bold mb-4">
+            <i class="fas fa-chart-line mr-3"></i>
+            HỆ THỐNG GIAO DỊCH DC7
+        </h1>
+        <p class="text-xl">Hướng Dẫn Hoàn Chỉnh Từ Tổng Quan Đến Chi Tiết</p>
+    </div>
+</header>
+
+<div class="container mx-auto px-4 py-8 max-w-6xl">
+
+<!-- 1. TỔNG QUAN HỆ THỐNG -->
+<section class="mb-12">
+    <h2 class="text-3xl font-bold text-blue-600 section-divider">
+        <i class="fas fa-eye mr-2"></i>
+        1. TỔNG QUAN HỆ THỐNG DC7
+    </h2>
+    
+    <div class="grid md:grid-cols-2 gap-8 mb-8">
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-bold mb-4 text-green-600">
+                <i class="fas fa-target mr-2"></i>Mục Tiêu Chính
+            </h3>
+            <ul class="space-y-2">
+                <li><i class="fas fa-check text-green-500 mr-2"></i>Giao dịch có hệ thống và kỷ luật</li>
+                <li><i class="fas fa-check text-green-500 mr-2"></i>Tăng tỷ lệ thắng (Win Rate)</li>
+                <li><i class="fas fa-check text-green-500 mr-2"></i>Tối ưu Risk/Reward Ratio</li>
+                <li><i class="fas fa-check text-green-500 mr-2"></i>Quản lý cảm xúc hiệu quả</li>
+            </ul>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-bold mb-4 text-blue-600">
+                <i class="fas fa-cogs mr-2"></i>Thành Phần Hệ Thống
+            </h3>
+            <ul class="space-y-2">
+                <li><i class="fas fa-arrow-right text-blue-500 mr-2"></i>Quy trình Phân tích</li>
+                <li><i class="fas fa-arrow-right text-blue-500 mr-2"></i>Quy trình Timing Entry</li>
+                <li><i class="fas fa-arrow-right text-blue-500 mr-2"></i>Quy trình Quản lý Lệnh</li>
+                <li><i class="fas fa-arrow-right text-blue-500 mr-2"></i>Đánh giá & Cải tiến</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded">
+        <h4 class="text-lg font-bold mb-2">
+            <i class="fas fa-lightbulb text-yellow-500 mr-2"></i>Nguyên Tắc Cốt Lõi
+        </h4>
+        <p class="text-gray-700">
+            Hệ thống DC7 hoạt động theo nguyên tắc <strong>"Từ Tổng Quan → Chi Tiết"</strong>: 
+            Bắt đầu từ phân tích thị trường tổng thể (HTF), sau đó đi sâu vào timing entry cụ thể (LTF), 
+            cuối cùng là quản lý và đánh giá từng giao dịch chi tiết.
+        </p>
+    </div>
+</section>
+
+<!-- 2. QUY TRÌNH CHÍNH -->
+<section class="mb-12">
+    <h2 class="text-3xl font-bold text-blue-600 section-divider">
+        <i class="fas fa-sitemap mr-2"></i>
+        2. QUY TRÌNH GIAO DỊCH CHÍNH
+    </h2>
+    
+    <div class="grid md:grid-cols-3 gap-6 mb-8">
+        <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+            <div class="text-4xl text-blue-500 mb-4">
+                <i class="fas fa-search"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Quy Trình Phân Tích</h3>
+            <p class="text-gray-600 mb-4">5 bước phân tích từ HTF đến LTF</p>
+            <div class="text-sm text-left">
+                <p>• Xác định bộ 3 timeframe</p>
+                <p>• Phân tích giai đoạn thị trường</p>
+                <p>• Tìm vùng thanh khoản</p>
+            </div>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+            <div class="text-4xl text-green-500 mb-4">
+                <i class="fas fa-crosshairs"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Timing Entry</h3>
+            <p class="text-gray-600 mb-4">3 setup giao dịch A/A+/A++</p>
+            <div class="text-sm text-left">
+                <p>• Setup A: NoSD + Kiệt sức</p>
+                <p>• Setup A+: NoSD + Pullback</p>
+                <p>• Setup A++: Bob Volman</p>
+            </div>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+            <div class="text-4xl text-red-500 mb-4">
+                <i class="fas fa-tasks"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Quản Lý Lệnh</h3>
+            <p class="text-gray-600 mb-4">TP, SL và Trailing Stop</p>
+            <div class="text-sm text-left">
+                <p>• Xác định TP1, TP2</p>
+                <p>• Dời SL khi đạt 2R</p>
+                <p>• Trailing stop từ 3R</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 3. CHI TIẾT QUY TRÌNH PHÂN TÍCH -->
+<section class="mb-12">
+    <h2 class="text-3xl font-bold text-blue-600 section-divider">
+        <i class="fas fa-microscope mr-2"></i>
+        3. CHI TIẾT QUY TRÌNH PHÂN TÍCH
+    </h2>
+    
+    <div class="bg-white p-6 rounded-lg shadow-lg mb-6">
+        <h3 class="text-xl font-bold mb-4 text-green-600">
+            <i class="fas fa-clock mr-2"></i>Bước 1: Xác Định Bộ 3 Timeframe
+        </h3>
+        <table class="trading-table">
+            <thead>
+                <tr>
+                    <th>Timeframe Trade Chính</th>
+                    <th>HTF (Higher Timeframe)</th>
+                    <th>LTF (Lower Timeframe)</th>
+                    <th>Bộ 3 Hoàn Chỉnh</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>M15</td>
+                    <td>H4</td>
+                    <td>M5</td>
+                    <td>H4/M15/M5</td>
+                </tr>
+                <tr>
+                    <td>M5</td>
+                    <td>H1</td>
+                    <td>M1</td>
+                    <td>H1/M5/M1</td>
+                </tr>
+                <tr>
+                    <td>H1</td>
+                    <td>H4</td>
+                    <td>M15</td>
+                    <td>H4/H1/M15</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-bold mb-4 text-blue-600">
+                <i class="fas fa-chart-bar mr-2"></i>Bước 2-3: Sóng Đẩy & Volume
+            </h3>
+            <div class="space-y-3">
+                <div class="border-l-4 border-green-400 pl-4">
+                    <h4 class="font-bold">Sóng Đẩy Tăng:</h4>
+                    <p>• Có break đỉnh</p>
+                    <p>• Volume tăng thuận xu hướng</p>
+                </div>
+                <div class="border-l-4 border-red-400 pl-4">
+                    <h4 class="font-bold">Sóng Đẩy Giảm:</h4>
+                    <p>• Có break đáy</p>
+                    <p>• Volume tăng thuận xu hướng</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-bold mb-4 text-purple-600">
+                <i class="fas fa-map-marker-alt mr-2"></i>Bước 4-5: Key Level & Target
+            </h3>
+            <ul class="space-y-2">
+                <li><i class="fas fa-check text-green-500 mr-2"></i>Volume Profile analysis</li>
+                <li><i class="fas fa-check text-green-500 mr-2"></i>Vùng thanh khoản chưa khai thác</li>
+                <li><i class="fas fa-check text-green-500 mr-2"></i>Key level xác nhận bởi volume</li>
+                <li><i class="fas fa-check text-green-500 mr-2"></i>Target giá tương lai</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- 4. CHI TIẾT TIMING ENTRY -->
+<section class="mb-12">
+    <h2 class="text-3xl font-bold text-blue-600 section-divider">
+        <i class="fas fa-bullseye mr-2"></i>
+        4. CHI TIẾT TIMING ENTRY
+    </h2>
+    
+    <div class="space-y-6">
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-bold mb-4 text-red-600">
+                <i class="fas fa-star mr-2"></i>Setup A: NoSD + Kiệt Sức Xu Hướng
+            </h3>
+            <p class="mb-3"><strong>Mục đích:</strong> Đánh đảo chiều xu hướng HTF</p>
+            <div class="bg-red-50 p-4 rounded">
+                <h4 class="font-bold mb-2">Điều kiện Entry:</h4>
+                <ul class="space-y-1">
+                    <li>• Xu hướng HTF đang mạnh nhưng có dấu hiệu kiệt sức</li>
+                    <li>• Volume giảm dần trong các đợt đẩy</li>
+                    <li>• Xuất hiện NoSD (No Supply/Demand) pattern</li>
+                    <li>• Confirmation từ LTF</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-bold mb-4 text-yellow-600">
+                <i class="fas fa-star mr-2"></i><i class="fas fa-star mr-2"></i>Setup A+: NoSD + Cuối Sóng Pullback
+            </h3>
+            <p class="mb-3"><strong>Mục đích:</strong> Entry tại cuối sóng hồi</p>
+            <div class="bg-yellow-50 p-4 rounded">
+                <h4 class="font-bold mb-2">Điều kiện Entry:</h4>
+                <ul class="space-y-1">
+                    <li>• Trend HTF rõ ràng</li>
+                    <li>• Đang trong pha pullback/correction</li>
+                    <li>• NoSD xuất hiện tại level quan trọng</li>
+                    <li>• Volume khô cạn trong pullback</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-bold mb-4 text-green-600">
+                <i class="fas fa-star mr-2"></i><i class="fas fa-star mr-2"></i><i class="fas fa-star mr-2"></i>Setup A++: Bob Volman + Kill Liquidity
+            </h3>
+            <p class="mb-3"><strong>Setup cao cấp nhất với tỷ lệ thắng cao</strong></p>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-green-50 p-4 rounded">
+                    <h4 class="font-bold mb-2 text-green-700">Long Entry:</h4>
+                    <ul class="space-y-1 text-sm">
+                        <li>• Pha tăng mạnh → hold trên đỉnh</li>
+                        <li>• Pullback tạo trendline</li>
+                        <li>• Break lên EMA18</li>
+                        <li>• Có sweep liquidity trước break</li>
+                        <li>• Entry khi pullback sau break</li>
+                    </ul>
+                </div>
+                <div class="bg-red-50 p-4 rounded">
+                    <h4 class="font-bold mb-2 text-red-700">Short Entry:</h4>
+                    <ul class="space-y-1 text-sm">
+                        <li>• Pha giảm mạnh → nén đi ngang</li>
+                        <li>• Volume show sự đối lập</li>
+                        <li>• Trading range formation</li>
+                        <li>• Break trendline + EMA18</li>
+                        <li>• Có sweep liquidity trước break</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 5. QUẢN LÝ LỆNH CHI TIẾT -->
+<section class="mb-12">
+    <h2 class="text-3xl font-bold text-blue-600 section-divider">
+        <i class="fas fa-cog mr-2"></i>
+        5. QUẢN LÝ LỆNH CHI TIẾT
+    </h2>
+    
+    <div class="bg-white p-6 rounded-lg shadow-lg">
+        <table class="trading-table">
+            <thead>
+                <tr>
+                    <th>Giai Đoạn</th>
+                    <th>Điều Kiện</th>
+                    <th>Hành Động</th>
+                    <th>Mục Đích</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Initial Setup</strong></td>
+                    <td>Entry được thực hiện</td>
+                    <td>Đặt SL ban đầu<br>Xác định TP1, TP2</td>
+                    <td>Bảo vệ vốn</td>
+                </tr>
+                <tr>
+                    <td><strong>Đạt 2R</strong></td>
+                    <td>Lợi nhuận = 2 × Risk</td>
+                    <td>Chốt 1/2 position<br>Dời SL = Entry</td>
+                    <td>Lock profit</td>
+                </tr>
+                <tr>
+                    <td><strong>Đạt 3R</strong></td>
+                    <td>Lợi nhuận = 3 × Risk</td>
+                    <td>Kích hoạt Trailing Stop<br>Khoảng cách = 2R</td>
+                    <td>Tối ưu lợi nhuận</td>
+                </tr>
+                <tr>
+                    <td><strong>Theo dõi</strong></td>
+                    <td>M15 trở lên</td>
+                    <td>Quan sát điều kiện entry<br>Cân nhắc cắt sớm</td>
+                    <td>Linh hoạt</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- 6. FORM ĐÁNH GIÁ TỪNG LỆNH -->
+<section class="mb-12">
+    <h2 class="text-3xl font-bold text-blue-600 section-divider">
+        <i class="fas fa-clipboard-check mr-2"></i>
+        6. MẪU ĐÁNH GIÁ TỪNG LỆNH GIAO DỊCH
+    </h2>
+    
+    <div class="bg-white p-6 rounded-lg shadow-lg mb-6">
+        <h3 class="text-xl font-bold mb-4 text-center">TRADING JOURNAL - DC7 SYSTEM</h3>
+        
+        <!-- Thông tin cơ bản -->
+        <table class="trading-table mb-6">
+            <thead>
+                <tr style="background-color: #e5e7eb;">
+                    <th colspan="8" style="text-align: center; font-size: 16px;">THÔNG TIN CỦA GIAO DỊCH</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Ngày:</strong></td>
+                    <td style="width: 100px;">_____________</td>
+                    <td><strong>Thời gian:</strong></td>
+                    <td style="width: 100px;">_____________</td>
+                    <td><strong>Cặp tiền:</strong></td>
+                    <td style="width: 100px;">_____________</td>
+                    <td><strong>Setup:</strong></td>
+                    <td style="width: 100px;">⬜ A ⬜ A+ ⬜ A++</td>
+                </tr>
+                <tr>
+                    <td><strong>Entry:</strong></td>
+                    <td>_____________</td>
+                    <td><strong>Stop Loss:</strong></td>
+                    <td>_____________</td>
+                    <td><strong>Risk (R):</strong></td>
+                    <td>_____________</td>
+                    <td><strong>Lot Size:</strong></td>
+                    <td>_____________</td>
+                </tr>
+                <tr>
+                    <td><strong>TP1:</strong></td>
+                    <td>_____________</td>
+                    <td><strong>TP2:</strong></td>
+                    <td>_____________</td>
+                    <td><strong>R/R Ratio:</strong></td>
+                    <td>_____________</td>
+                    <td><strong>Direction:</strong></td>
+                    <td>⬜ Long ⬜ Short</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Kết quả giao dịch -->
+        <table class="trading-table mb-6">
+            <thead>
+                <tr style="background-color: #fef3c7;">
+                    <th colspan="6" style="text-align: center; font-size: 16px;">KẾT QUẢ GIAO DỊCH</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Kết quả:</strong></td>
+                    <td>⬜ Win ⬜ Loss ⬜ BE</td>
+                    <td><strong>Exit Price:</strong></td>
+                    <td>_____________</td>
+                    <td><strong>P&L (R):</strong></td>
+                    <td>_____________</td>
+                </tr>
+                <tr>
+                    <td><strong>P&L ($):</strong></td>
+                    <td>_____________</td>
+                    <td><strong>Hold Time:</strong></td>
+                    <td>_____________</td>
+                    <td><strong>Max Drawdown:</strong></td>
+                    <td>_____________</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Đánh giá chi tiết -->
+        <table class="trading-table mb-6">
+            <thead>
+                <tr style="background-color: #dbeafe;">
+                    <th colspan="4" style="text-align: center; font-size: 16px;">ĐÁNH GIÁ CHI TIẾT</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="4"><strong>1. Đã phân tích đúng 5 bước DC7?</strong></td>
+                </tr>
+                <tr>
+                    <td style="width: 25%;">⬜ Bộ 3 timeframe</td>
+                    <td style="width: 25%;">⬜ Giai đoạn thị trường</td>
+                    <td style="width: 25%;">⬜ Sóng đẩy + Volume</td>
+                    <td style="width: 25%;">⬜ Vùng thanh khoản</td>
+                </tr>
+                <tr>
+                    <td colspan="4"><strong>2. Điều kiện Setup có đầy đủ?</strong></td>
+                </tr>
+                <tr>
+                    <td>⬜ Price Action đúng</td>
+                    <td>⬜ Volume confirmation</td>
+                    <td>⬜ Key level test</td>
+                    <td>⬜ Timing chính xác</td>
+                </tr>
+                <tr>
+                    <td colspan="4"><strong>3. Quản lý lệnh theo quy trình?</strong></td>
+                </tr>
+                <tr>
+                    <td>⬜ SL đúng vị trí</td>
+                    <td>⬜ Dời SL khi đạt 2R</td>
+                    <td>⬜ TP theo kế hoạch</td>
+                    <td>⬜ Trailing stop đúng</td>
+                </tr>
+                <tr>
+                    <td colspan="4"><strong>4. Tâm lý & Cảm xúc</strong></td>
+                </tr>
+                <tr>
+                    <td>⬜ Không FOMO</td>
+                    <td>⬜ Không Revenge</td>
+                    <td>⬜ Tuân thủ kỷ luật</td>
+                    <td>⬜ Bình tĩnh ra quyết định</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Ghi chú và cải tiến -->
+        <table class="trading-table">
+            <thead>
+                <tr style="background-color: #fef2f2;">
+                    <th style="text-align: center; font-size: 16px;">GHI CHÚ & KẾ HOẠCH CẢI TIẾN</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="height: 80px; vertical-align: top;">
+                        <strong>Lý do thắng/thua:</strong><br>
+                        _________________________________________________________________________<br>
+                        _________________________________________________________________________
+                    </td>
+                </tr>
+                <tr>
+                    <td style="height: 80px; vertical-align: top;">
+                        <strong>Cảm xúc trong giao dịch:</strong><br>
+                        _________________________________________________________________________<br>
+                        _________________________________________________________________________
+                    </td>
+                </tr>
+                <tr>
+                    <td style="height: 80px; vertical-align: top;">
+                        <strong>Bài học rút ra:</strong><br>
+                        _________________________________________________________________________<br>
+                        _________________________________________________________________________
+                    </td>
+                </tr>
+                <tr>
+                    <td style="height: 80px; vertical-align: top;">
+                        <strong>Kế hoạch cải tiến cụ thể:</strong><br>
+                        _________________________________________________________________________<br>
+                        _________________________________________________________________________
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Bảng tổng kết tuần -->
+    <div class="bg-white p-6 rounded-lg shadow-lg">
+        <h3 class="text-xl font-bold mb-4 text-center">BÁO CÁO TUẦN</h3>
+        <table class="trading-table">
+            <thead>
+                <tr style="background-color: #f3f4f6;">
+                    <th>STT</th>
+                    <th>Ngày</th>
+                    <th>Cặp tiền</th>
+                    <th>Setup</th>
+                    <th>R/R</th>
+                    <th>Kết quả</th>
+                    <th>P&L (R)</th>
+                    <th>Ghi chú</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>____</td><td>____</td><td>____</td><td>____</td><td>____</td><td>____</td><td>________________</td></tr>
+                <tr><td>2</td><td>____</td><td>____</td><td>____</td><td>____</td><td>____</td><td>____</td><td>________________</td></tr>
+                <tr><td>3</td><td>____</td><td>____</td><td>____</td><td>____</td><td>____</td><td>____</td><td>________________</td></tr>
+                <tr><td>4</td><td>____</td><td>____</td><td>____</td><td>____</td><td>____</td><td>____</td><td>________________</td></tr>
+                <tr><td>5</td><td>____</td><td>____</td><td>____</td><td>____</td><td>____</td><td>____</td><td>________________</td></tr>
+                <tr style="background-color: #f9fafb; font-weight: bold;">
+                    <td colspan="6" style="text-align: center;">TỔNG KẾT</td>
+                    <td>____</td>
+                    <td>Win Rate: ____%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- 7. CHECKLIST HÀNG NGÀY -->
+<section class="mb-12">
+    <h2 class="text-3xl font-bold text-blue-600 section-divider">
+        <i class="fas fa-list-check mr-2"></i>
+        7. CHECKLIST GIAO DỊCH HÀNG NGÀY
+    </h2>
+    
+    <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h3 class="text-lg font-bold mb-4 text-green-600">
+                <i class="fas fa-sun mr-2"></i>TRƯỚC KHI GIAO DỊCH
+            </h3>
+            <div class="space-y-2">
+                <label class="flex items-center"><input type="checkbox" class="mr-2"> Phân tích HTF</label>
+                <label class="flex items-center"><input type="checkbox" class="mr-2"> Xác định trend chính</label>
+                <label class="flex items-center"><input type="checkbox" class="mr-2"> Tìm vùng thanh khoản</label>
+                <label class="flex items-center"><input type="checkbox" class="mr-2"> Lập kế hoạch trade</label>
+                <label class="flex items-center"><input type="checkbox" class="mr-2"> Kiểm tra news quan trọng</label>
+                <label class="flex items-center"><input type="checkbox" class="mr-2"> Chuẩn bị tâm lý</label>
+            </div>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h3 class="text-lg font-bold mb-4 text-blue-600">
+                <i class="fas fa-crosshairs mr-2"></i>TRONG QUÁ TRÌNH TRADE
+            </h3>
+            <div class="space-y-2">
+                <label class="flex items-center"><input type="checkbox" class="mr-2"> Chờ setup đúng</label>
+                <label class="flex items-center"><input type="checkbox" class="mr-2"> Tính toán risk 1R</label>
+                <label class="flex items-center"><input type="checkbox" class="mr-2"> Entry theo kế hoạch</label>
+                <label class="flex items-center"><input type="checkbox" class="mr-2"> Đặt SL ngay</label>
+                <label class="flex items-center"><input type="checkbox" class="mr-2"> Theo dõi quản lý</label>
+                <label class="flex items-center"><input type="checkbox" class="mr-2"> Kiểm soát cảm xúc</label>
+            </div>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h3 class="text-lg font-bold mb-4 text-red-600">
+                <i class="fas fa-moon mr-2"></i>CUỐI NGÀY
+            </h3>
+            <div class="space-y-2">
+                <label class="flex items-center"><input type="checkbox" class="mr-2"> Review từng lệnh</label>
+                <label class="flex items-center"><input type="checkbox" class="mr-2"> Ghi trading journal</label>
+                <label class="flex items-center"><input type="checkbox" class="mr-2"> Phân tích lỗi sai</label>
+                <label class="flex items-center"><input type="checkbox" class="mr-2"> Kế hoạch cải tiến</label>
+                <label class="flex items-center"><input type="checkbox" class="mr-2"> Cập nhật statistics</label>
+                <label class="flex items-center"><input type="checkbox" class="mr-2"> Chuẩn bị ngày mai</label>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-gray-800 text-white py-8 mt-12">
+    <div class="container mx-auto px-4 text-center">
+        <h3 class="text-2xl font-bold mb-4">
+            <i class="fas fa-chart-line mr-2"></i>
+            HỆ THỐNG DC7 TRADING
+        </h3>
+        <p class="text-gray-300 mb-4">
+            "Kỷ luật + Kiên nhất + Cải tiến = Thành công bền vững"
+        </p>
+        <div class="text-sm text-gray-400">
+            <p>✅ Phân tích hệ thống • ✅ Entry chính xác • ✅ Quản lý chặt chẽ • ✅ Đánh giá liên tục</p>
+        </div>
+    </div>
+</footer>
+
+</div>
+
+<script>
+// Simple interactivity for checkboxes
+document.addEventListener('DOMContentLoaded', function() {
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+            if (this.checked) {
+                this.parentElement.style.backgroundColor = '#f0f9ff';
+            } else {
+                this.parentElement.style.backgroundColor = '';
+            }
+        });
+    });
+});
+</script>
+
+</body>
+</html>
