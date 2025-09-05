@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DC7 Trading System - Hướng Dẫn Từ Tổng Quan Đến Chi Tiết</title>
+    <title>Hệ Thống Giao Dịch DC7 - 4 Quy Trình Chuyên Nghiệp</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
     <style>
@@ -14,587 +14,1215 @@
         .trading-table { 
             border-collapse: collapse; 
             width: 100%; 
+            margin: 16px 0;
         }
         .trading-table th, .trading-table td { 
-            border: 1px solid #333; 
-            padding: 8px; 
-            text-align: left; 
+            border: 1px solid #374151; 
+            padding: 12px 8px; 
+            text-align: left;
+            vertical-align: top;
         }
         .trading-table th { 
-            background-color: #f0f0f0; 
+            background-color: #f3f4f6; 
             font-weight: bold; 
         }
         .section-divider {
-            border-bottom: 3px solid #2563eb;
+            border-bottom: 3px solid #1e3a8a;
             margin: 40px 0 20px 0;
             padding-bottom: 10px;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-left: 4px solid #1e3a8a;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .step-box {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 16px 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .process-number {
+            background: #1e3a8a;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
         }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
 <!-- HEADER -->
-<header class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-8">
+<header class="bg-gradient-to-r from-blue-800 to-blue-900 text-white py-12">
     <div class="container mx-auto px-4 text-center">
-        <h1 class="text-4xl font-bold mb-4">
+        <h1 class="text-5xl font-bold mb-4">
             <i class="fas fa-chart-line mr-3"></i>
             HỆ THỐNG GIAO DỊCH DC7
         </h1>
-        <p class="text-xl">Hướng Dẫn Hoàn Chỉnh Từ Tổng Quan Đến Chi Tiết</p>
+        <p class="text-2xl mb-2">4 Quy Trình Độc Lập Của Nhà Giao Dịch Chuyên Nghiệp</p>
+        <p class="text-lg text-blue-200">Nhật Ký Giao Dịch & Quy Trình Cải Tiến Hiệu Quả</p>
     </div>
 </header>
 
-<div class="container mx-auto px-4 py-8 max-w-6xl">
+<div class="container mx-auto px-4 py-8 max-w-7xl">
 
-<!-- 1. TỔNG QUAN HỆ THỐNG -->
-<section class="mb-12">
-    <h2 class="text-3xl font-bold text-blue-600 section-divider">
-        <i class="fas fa-eye mr-2"></i>
-        1. TỔNG QUAN HỆ THỐNG DC7
+<!-- 1. GIỚI THIỆU HỆ THỐNG DC7 -->
+<section class="mb-16">
+    <h2 class="text-4xl font-bold text-blue-800 section-divider">
+        <i class="fas fa-cogs mr-3"></i>
+        1. QUY TRÌNH ĐỘC LẬP CỦA NHÀ GIAO DỊCH CHUYÊN NGHIỆP
     </h2>
     
-    <div class="grid md:grid-cols-2 gap-8 mb-8">
-        <div class="bg-white p-6 rounded-lg shadow-lg">
-            <h3 class="text-xl font-bold mb-4 text-green-600">
-                <i class="fas fa-target mr-2"></i>Mục Tiêu Chính
-            </h3>
-            <ul class="space-y-2">
-                <li><i class="fas fa-check text-green-500 mr-2"></i>Giao dịch có hệ thống và kỷ luật</li>
-                <li><i class="fas fa-check text-green-500 mr-2"></i>Tăng tỷ lệ thắng (Win Rate)</li>
-                <li><i class="fas fa-check text-green-500 mr-2"></i>Tối ưu Risk/Reward Ratio</li>
-                <li><i class="fas fa-check text-green-500 mr-2"></i>Quản lý cảm xúc hiệu quả</li>
-            </ul>
-        </div>
-        
-        <div class="bg-white p-6 rounded-lg shadow-lg">
-            <h3 class="text-xl font-bold mb-4 text-blue-600">
-                <i class="fas fa-cogs mr-2"></i>Thành Phần Hệ Thống
-            </h3>
-            <ul class="space-y-2">
-                <li><i class="fas fa-arrow-right text-blue-500 mr-2"></i>Quy trình Phân tích</li>
-                <li><i class="fas fa-arrow-right text-blue-500 mr-2"></i>Quy trình Timing Entry</li>
-                <li><i class="fas fa-arrow-right text-blue-500 mr-2"></i>Quy trình Quản lý Lệnh</li>
-                <li><i class="fas fa-arrow-right text-blue-500 mr-2"></i>Đánh giá & Cải tiến</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded">
-        <h4 class="text-lg font-bold mb-2">
-            <i class="fas fa-lightbulb text-yellow-500 mr-2"></i>Nguyên Tắc Cốt Lõi
-        </h4>
-        <p class="text-gray-700">
-            Hệ thống DC7 hoạt động theo nguyên tắc <strong>"Từ Tổng Quan → Chi Tiết"</strong>: 
-            Bắt đầu từ phân tích thị trường tổng thể (HTF), sau đó đi sâu vào timing entry cụ thể (LTF), 
-            cuối cùng là quản lý và đánh giá từng giao dịch chi tiết.
+    <div class="highlight-box mb-8">
+        <p class="text-lg font-semibold">
+            <strong>1 chu kỳ giao dịch cần liên tục trải qua 4 quy trình bên trong:</strong>
         </p>
     </div>
-</section>
 
-<!-- 2. QUY TRÌNH CHÍNH -->
-<section class="mb-12">
-    <h2 class="text-3xl font-bold text-blue-600 section-divider">
-        <i class="fas fa-sitemap mr-2"></i>
-        2. QUY TRÌNH GIAO DỊCH CHÍNH
-    </h2>
-    
-    <div class="grid md:grid-cols-3 gap-6 mb-8">
-        <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-            <div class="text-4xl text-blue-500 mb-4">
-                <i class="fas fa-search"></i>
-            </div>
-            <h3 class="text-xl font-bold mb-3">Quy Trình Phân Tích</h3>
-            <p class="text-gray-600 mb-4">5 bước phân tích từ HTF đến LTF</p>
-            <div class="text-sm text-left">
-                <p>• Xác định bộ 3 timeframe</p>
-                <p>• Phân tích giai đoạn thị trường</p>
-                <p>• Tìm vùng thanh khoản</p>
-            </div>
-        </div>
-        
-        <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-            <div class="text-4xl text-green-500 mb-4">
-                <i class="fas fa-crosshairs"></i>
-            </div>
-            <h3 class="text-xl font-bold mb-3">Timing Entry</h3>
-            <p class="text-gray-600 mb-4">3 setup giao dịch A/A+/A++</p>
-            <div class="text-sm text-left">
-                <p>• Setup A: NoSD + Kiệt sức</p>
-                <p>• Setup A+: NoSD + Pullback</p>
-                <p>• Setup A++: Bob Volman</p>
-            </div>
-        </div>
-        
-        <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-            <div class="text-4xl text-red-500 mb-4">
-                <i class="fas fa-tasks"></i>
-            </div>
-            <h3 class="text-xl font-bold mb-3">Quản Lý Lệnh</h3>
-            <p class="text-gray-600 mb-4">TP, SL và Trailing Stop</p>
-            <div class="text-sm text-left">
-                <p>• Xác định TP1, TP2</p>
-                <p>• Dời SL khi đạt 2R</p>
-                <p>• Trailing stop từ 3R</p>
-            </div>
-        </div>
+    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <table class="trading-table">
+            <thead>
+                <tr style="background-color: #1e3a8a; color: white;">
+                    <th style="text-align: center; width: 10%;">STT</th>
+                    <th style="text-align: center; width: 30%;">Tên Quy Trình</th>
+                    <th style="text-align: center; width: 60%;">Kết Quả Cần Có Của 1 Quy Trình</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="text-align: center; font-weight: bold; background-color: #f8fafc;">1</td>
+                    <td style="font-weight: bold;">Quy trình phân tích</td>
+                    <td>Xác định vùng giao dịch hợp lệ<br>Lập được kế hoạch giao dịch</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center; font-weight: bold; background-color: #f8fafc;">2</td>
+                    <td style="font-weight: bold;">Quy trình Timing entry</td>
+                    <td>Điều kiện vào lệnh Và vào được lệnh</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center; font-weight: bold; background-color: #f8fafc;">3</td>
+                    <td style="font-weight: bold;">Quy trình quản lý lệnh</td>
+                    <td>Tối thiểu rủi ro và giữ được lợi nhuận</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center; font-weight: bold; background-color: #f8fafc;">4</td>
+                    <td style="font-weight: bold;">Quy trình cải tiến hiệu quả giao dịch</td>
+                    <td>Review từng lệnh, review 3 quy trình trước đó, tìm điểm bất hợp lý và có phương án cải tiến<br>Đánh giá số liệu các hệ số giao dịch quan trọng: Winrate, Sharp Ratio, Daily loss, Drawdown</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </section>
 
-<!-- 3. CHI TIẾT QUY TRÌNH PHÂN TÍCH -->
-<section class="mb-12">
-    <h2 class="text-3xl font-bold text-blue-600 section-divider">
-        <i class="fas fa-microscope mr-2"></i>
-        3. CHI TIẾT QUY TRÌNH PHÂN TÍCH
+<!-- 2. CÁC NGUYÊN TẮC CƠ BẢN -->
+<section class="mb-16">
+    <h2 class="text-4xl font-bold text-blue-800 section-divider">
+        <i class="fas fa-foundation mr-3"></i>
+        2. CÁC NGUYÊN TẮC CƠ BẢN
     </h2>
     
-    <div class="bg-white p-6 rounded-lg shadow-lg mb-6">
-        <h3 class="text-xl font-bold mb-4 text-green-600">
-            <i class="fas fa-clock mr-2"></i>Bước 1: Xác Định Bộ 3 Timeframe
+    <!-- 9.1 Unlearn -->
+    <div class="step-box">
+        <h3 class="text-2xl font-bold text-green-700 mb-4">
+            <span class="process-number mr-4">9.1</span>
+            Unlearn - Bước Khởi Đầu Của Sự Tự Do Trong Trading
         </h3>
-        <table class="trading-table">
-            <thead>
-                <tr>
-                    <th>Timeframe Trade Chính</th>
-                    <th>HTF (Higher Timeframe)</th>
-                    <th>LTF (Lower Timeframe)</th>
-                    <th>Bộ 3 Hoàn Chỉnh</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>M15</td>
-                    <td>H4</td>
-                    <td>M5</td>
-                    <td>H4/M15/M5</td>
-                </tr>
-                <tr>
-                    <td>M5</td>
-                    <td>H1</td>
-                    <td>M1</td>
-                    <td>H1/M5/M1</td>
-                </tr>
-                <tr>
-                    <td>H1</td>
-                    <td>H4</td>
-                    <td>M15</td>
-                    <td>H4/H1/M15</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+        
+        <div class="bg-green-50 p-6 rounded-lg mb-6">
+            <p class="text-lg leading-relaxed mb-4">
+                Trong trading, nhiều người cứ mải miết tìm thêm kiến thức, thêm công cụ, thêm phương pháp… nhưng càng học, càng rối. 
+                <strong>Sự thật là: điều đầu tiên bạn cần không phải là học thêm, mà là gỡ bỏ.</strong>
+            </p>
+            <p class="text-gray-700 leading-relaxed">
+                Unlearn là quá trình buông bỏ những niềm tin cũ kỹ và sai lầm để nhường chỗ cho những tư duy đúng đắn hơn. 
+                Đa phần trader đến với thị trường mang theo một "ba lô nặng trĩu" – nào là ảo tưởng về giàu nhanh, 
+                nào là thói quen vào lệnh vô kỷ luật, nào là niềm tin rằng thị trường sẽ luôn "trả ơn" mình. 
+                Nếu không Unlearn, bạn sẽ cứ lặp lại vòng xoáy cũ: thử – thua – thất vọng – rồi lại thử cái mới với cái đầu cũ.
+            </p>
+        </div>
 
-    <div class="grid md:grid-cols-2 gap-6 mb-6">
-        <div class="bg-white p-6 rounded-lg shadow-lg">
-            <h3 class="text-xl font-bold mb-4 text-blue-600">
-                <i class="fas fa-chart-bar mr-2"></i>Bước 2-3: Sóng Đẩy & Volume
-            </h3>
-            <div class="space-y-3">
-                <div class="border-l-4 border-green-400 pl-4">
-                    <h4 class="font-bold">Sóng Đẩy Tăng:</h4>
-                    <p>• Có break đỉnh</p>
-                    <p>• Volume tăng thuận xu hướng</p>
+        <h4 class="text-xl font-bold mb-4 text-blue-600">
+            <i class="fas fa-tools mr-2"></i>Cách Thực Hành Unlearn
+        </h4>
+        
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-red-50 p-6 rounded-lg">
+                <h5 class="font-bold text-red-700 mb-3">
+                    <i class="fas fa-search mr-2"></i>1. Nhận diện niềm tin cũ
+                </h5>
+                <p class="mb-3">Ngồi xuống và viết ra: "Tôi đang tin điều gì về trading?"</p>
+                <div class="text-sm space-y-1">
+                    <p>• Tôi tin rằng càng giao dịch nhiều thì càng dễ thắng</p>
+                    <p>• Tôi tin rằng không cần stoploss, chỉ cần gồng là giá sẽ quay lại</p>
+                    <p>• Tôi tin rằng chỉ một indicator nào đó sẽ giúp tôi bất bại</p>
                 </div>
-                <div class="border-l-4 border-red-400 pl-4">
-                    <h4 class="font-bold">Sóng Đẩy Giảm:</h4>
-                    <p>• Có break đáy</p>
-                    <p>• Volume tăng thuận xu hướng</p>
+            </div>
+            
+            <div class="bg-yellow-50 p-6 rounded-lg">
+                <h5 class="font-bold text-yellow-700 mb-3">
+                    <i class="fas fa-hammer mr-2"></i>2. Thử thách và phá vỡ
+                </h5>
+                <p class="mb-3">Tự hỏi: "Niềm tin này đã giúp tôi tiến bộ, hay chỉ khiến tôi mất tiền?"</p>
+                <p class="text-sm">
+                    Nếu nó không mang lại kết quả tích cực, hãy dũng cảm buông bỏ. 
+                    Một trader chuyên nghiệp là người biết gỡ bỏ những gì không còn phục vụ mình.
+                </p>
+            </div>
+            
+            <div class="bg-green-50 p-6 rounded-lg">
+                <h5 class="font-bold text-green-700 mb-3">
+                    <i class="fas fa-sync-alt mr-2"></i>3. Thay thế bằng nguyên tắc mới
+                </h5>
+                <p class="mb-3">Unlearn không chỉ là bỏ đi, mà còn là thay bằng điều đúng đắn:</p>
+                <div class="text-sm space-y-1">
+                    <p>• "Luôn đặt stoploss để bảo vệ vốn"</p>
+                    <p>• "Ít nhưng chất lượng mới tạo ra lợi nhuận bền vững"</p>
+                    <p>• "Hiểu bản chất thị trường quan trọng hơn bất kỳ công cụ nào"</p>
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- 9.2 Tính nhất quán -->
+    <div class="step-box">
+        <h3 class="text-2xl font-bold text-blue-700 mb-4">
+            <span class="process-number mr-4">9.2</span>
+            Tính nhất quán để cải tiến hiệu quả
+        </h3>
         
-        <div class="bg-white p-6 rounded-lg shadow-lg">
-            <h3 class="text-xl font-bold mb-4 text-purple-600">
-                <i class="fas fa-map-marker-alt mr-2"></i>Bước 4-5: Key Level & Target
-            </h3>
-            <ul class="space-y-2">
-                <li><i class="fas fa-check text-green-500 mr-2"></i>Volume Profile analysis</li>
-                <li><i class="fas fa-check text-green-500 mr-2"></i>Vùng thanh khoản chưa khai thác</li>
-                <li><i class="fas fa-check text-green-500 mr-2"></i>Key level xác nhận bởi volume</li>
-                <li><i class="fas fa-check text-green-500 mr-2"></i>Target giá tương lai</li>
-            </ul>
+        <div class="bg-blue-50 p-6 rounded-lg mb-6">
+            <p class="text-lg leading-relaxed mb-4">
+                Trong giao dịch, điều quan trọng không chỉ là có quy trình, mà còn là thực hiện quy trình đó một cách nhất quán. 
+                Nếu hôm nay bạn làm đúng, ngày mai lại tuỳ tiện thay đổi, thì kết quả sẽ bị trộn lẫn bởi nhiều yếu tố khác nhau.
+            </p>
+            <p class="font-semibold text-blue-800">
+                Khi giữ sự nhất quán trong cả bốn bước, kết quả giao dịch phản ánh đúng chất lượng của quy trình.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-white p-6 border-l-4 border-blue-500">
+                <h4 class="font-bold mb-3">Nhờ tính nhất quán, bạn có thể chỉ ra chính xác:</h4>
+                <ul class="space-y-2 text-sm">
+                    <li>• Nếu phân tích sai vùng → vấn đề ở bước <strong>Phân tích</strong></li>
+                    <li>• Nếu vào lệnh không hiệu quả → lỗi ở bộ điều kiện <strong>Entry</strong></li>
+                    <li>• Nếu lãi nhỏ nhưng thua lỗ lớn → nguyên nhân ở <strong>Quản lý vốn</strong></li>
+                    <li>• Nếu liên tục lặp lại sai lầm cũ → khâu <strong>Review</strong> chưa đủ sâu</li>
+                </ul>
+            </div>
+            
+            <div class="bg-gray-50 p-6 border-l-4 border-gray-500">
+                <h4 class="font-bold mb-3">Quy trình 4 bước cần duy trì nhất quán:</h4>
+                <ol class="space-y-2 text-sm">
+                    <li><strong>1. Phân Tích</strong> – Tuân thủ đúng tiêu chí đã đặt ra</li>
+                    <li><strong>2. Timing Entry</strong> – Chỉ vào lệnh khi đủ tín hiệu</li>
+                    <li><strong>3. Quản Lý</strong> – Giữ kỷ luật về vốn, stoploss, R:R</li>
+                    <li><strong>4. Cải Tiến</strong> – Kiểm tra lại toàn bộ 4 bước trước</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <!-- 9.3 Kỷ luật -->
+    <div class="step-box">
+        <h3 class="text-2xl font-bold text-red-700 mb-4">
+            <span class="process-number mr-4">9.3</span>
+            Kỷ luật là kỷ luật cái gì?
+        </h3>
+        
+        <div class="bg-red-50 p-6 rounded-lg mb-6">
+            <p class="text-lg font-semibold mb-2">
+                Ở đây bạn cần phân biệt những vấn đề bạn kiểm soát được hoàn toàn, và những vấn đề chưa hoặc không kiểm soát được hoàn toàn
+            </p>
+        </div>
+
+        <div class="space-y-6">
+            <!-- Kiểm soát được hoàn toàn -->
+            <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded">
+                <h4 class="text-xl font-bold text-green-700 mb-4">
+                    <i class="fas fa-check-circle mr-2"></i>Những thứ kiểm soát được hoàn toàn:
+                </h4>
+                <div class="grid md:grid-cols-2 gap-4 text-sm">
+                    <div>
+                        <ul class="space-y-1">
+                            <li>• Khối lượng giao dịch</li>
+                            <li>• Mức thua lỗ tối đa 1 lệnh</li>
+                            <li>• Điểm đặt stop loss</li>
+                            <li>• Quyền dời stop loss</li>
+                            <li>• Quyền thoát lệnh</li>
+                            <li>• Quyền giảm khối lượng vị thế</li>
+                            <li>• Mức thua lỗ tối đa trong 1 ngày</li>
+                            <li>• Mức sụt giảm tối đa trong 1 ngày</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul class="space-y-1">
+                            <li>• Tài sản giao dịch phù hợp với bài đánh</li>
+                            <li>• Sàn giao dịch uy tín</li>
+                            <li>• Giờ giao dịch và kế hoạch khung giờ</li>
+                            <li>• Hoạt động chuẩn bị sự tỉnh táo</li>
+                            <li>• Điều kiện vào lệnh và bài đánh</li>
+                            <li>• Quyền không giao dịch</li>
+                            <li>• Tránh giao dịch khi thiếu tỉnh táo</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Không kiểm soát được -->
+            <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded">
+                <h4 class="text-xl font-bold text-red-700 mb-4">
+                    <i class="fas fa-times-circle mr-2"></i>Những thứ không kiểm soát được hoàn toàn:
+                </h4>
+                <div class="space-y-3 text-sm">
+                    <div>
+                        <p><strong>• Đường giá:</strong> Một khối lượng lệnh market đủ lớn sẽ đẩy tung bất cứ cái cảng cứng nào, vùng thanh khoản nào. Toàn bộ Stoploss của bạn được MM quan sát và luôn thống kê kỹ lưỡng, bạn đang là con mồi, do đó bạn cần là con mồi thông minh.</p>
+                    </div>
+                    <div>
+                        <p><strong>• Tin tức:</strong> Cần phân biệt trade theo tin và phân tích tin tức để trade. Đường giá là thứ chúng ta đã đồng thuận nó là thứ không kiểm soát được.</p>
+                    </div>
+                    <div>
+                        <p><strong>• Thời điểm impact của tin:</strong> Giá đã chạy trước tin tức, khối lượng thể hiện nguyên nhân của giá, cái bạn cần là phân tích hành vi của giá và khối lượng.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chưa kiểm soát được hoàn toàn -->
+            <div class="bg-yellow-50 border-l-4 border-yellow-500 p-6 rounded">
+                <h4 class="text-xl font-bold text-yellow-700 mb-4">
+                    <i class="fas fa-exclamation-triangle mr-2"></i>Những thứ chưa kiểm soát được hoàn toàn:
+                </h4>
+                <div class="space-y-3 text-sm">
+                    <div>
+                        <p><strong>• Tâm lý/Cảm xúc/Lý trí của trader:</strong> Cách duy nhất để kiểm soát được lý trí hay cảm xúc đó là bạn cần có 1 thước đo tham chiếu để quyết định, nó là Bài trade của bạn, Checklist vào lệnh của bạn.</p>
+                    </div>
+                    <div>
+                        <p><strong>• Tiếng nói nhỏ trong đầu:</strong> Bạn cần nhận ra tiếng nói nhỏ trong đầu, hoạt động này là 1 hoạt động quán tâm trí, cần luyện tập.</p>
+                    </div>
+                    <div>
+                        <p><strong>• Tâm trí cần luyện tập:</strong> Hướng tới một Trader giỏi, tôi khuyên bạn tôn thờ sự tỉnh táo và chuẩn bị mình có 1 tâm trí thật tỉnh táo và trọng tâm.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- 4. CHI TIẾT TIMING ENTRY -->
-<section class="mb-12">
-    <h2 class="text-3xl font-bold text-blue-600 section-divider">
-        <i class="fas fa-bullseye mr-2"></i>
-        4. CHI TIẾT TIMING ENTRY
+<!-- 3. QUY TRÌNH 1: PHÂN TÍCH CHART -->
+<section class="mb-16">
+    <h2 class="text-4xl font-bold text-blue-800 section-divider">
+        <i class="fas fa-chart-area mr-3"></i>
+        3. QUY TRÌNH 1: PHÂN TÍCH CHART (9.4)
     </h2>
-    
-    <div class="space-y-6">
-        <div class="bg-white p-6 rounded-lg shadow-lg">
-            <h3 class="text-xl font-bold mb-4 text-red-600">
-                <i class="fas fa-star mr-2"></i>Setup A: NoSD + Kiệt Sức Xu Hướng
-            </h3>
-            <p class="mb-3"><strong>Mục đích:</strong> Đánh đảo chiều xu hướng HTF</p>
-            <div class="bg-red-50 p-4 rounded">
-                <h4 class="font-bold mb-2">Điều kiện Entry:</h4>
-                <ul class="space-y-1">
-                    <li>• Xu hướng HTF đang mạnh nhưng có dấu hiệu kiệt sức</li>
-                    <li>• Volume giảm dần trong các đợt đẩy</li>
-                    <li>• Xuất hiện NoSD (No Supply/Demand) pattern</li>
-                    <li>• Confirmation từ LTF</li>
+
+    <!-- 9.4.1 Timeframe Selection -->
+    <div class="step-box">
+        <h3 class="text-2xl font-bold text-purple-700 mb-4">
+            <span class="process-number mr-4">9.4.1</span>
+            Bạn trade khung thời gian nào? (timeframe)
+        </h3>
+        
+        <div class="bg-purple-50 p-6 rounded-lg mb-6">
+            <p class="text-lg leading-relaxed mb-4">
+                Một Trader cần có khung thời gian trade phù hợp với thời gian dành cho trading của mình, 
+                phù hợp với mức độ hiểu biết, kinh nghiệm trade của mình.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+            <div class="bg-white p-6 border-l-4 border-purple-500">
+                <h4 class="font-bold mb-3">Tư duy chọn khung thời gian:</h4>
+                <ul class="space-y-2 text-sm">
+                    <li>• <strong>Trader mới:</strong> Cần trade thật nhiều lệnh để đúc kết kinh nghiệm → chọn M15 (có thể 1000 lệnh/năm)</li>
+                    <li>• <strong>Trade theo giá & volume:</strong> Cần H1 hoặc M15 (15 phút đủ để thể hiện hành vi thao túng)</li>
+                    <li>• <strong>Trader có kinh nghiệm:</strong> Có thể trade H4, Daily (ít lệnh hơn nhưng chất lượng cao)</li>
+                </ul>
+            </div>
+            
+            <div class="bg-gray-50 p-6 border-l-4 border-gray-500">
+                <h4 class="font-bold mb-3">Nguyên tắc đa khung:</h4>
+                <ul class="space-y-2 text-sm">
+                    <li>• <strong>Main Timeframe (MTF):</strong> Khung chính để trade</li>
+                    <li>• <strong>HTF:</strong> Gấp 6-8 lần MTF để phân tích tổng thể</li>
+                    <li>• <strong>LTF:</strong> Nhỏ hơn MTF 3-5 lần để tối ưu entry</li>
                 </ul>
             </div>
         </div>
+
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <table class="trading-table">
+                <thead>
+                    <tr style="background-color: #7c3aed; color: white;">
+                        <th style="text-align: center;">Main Timeframe - MTF</th>
+                        <th style="text-align: center;">High Timeframe - HTF</th>
+                        <th style="text-align: center;">Low Timeframe - LTF</th>
+                        <th style="text-align: center;">Bộ 3 Hoàn Chỉnh</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="text-align: center; font-weight: bold;">M5</td>
+                        <td style="text-align: center;">H1, Daily</td>
+                        <td style="text-align: center;">M1</td>
+                        <td style="text-align: center; background-color: #f8fafc;">H1/M5/M1</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; font-weight: bold;">M15</td>
+                        <td style="text-align: center;">H4, Daily</td>
+                        <td style="text-align: center;">M5</td>
+                        <td style="text-align: center; background-color: #f8fafc;">H4/M15/M5</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; font-weight: bold;">H1</td>
+                        <td style="text-align: center;">H4, Daily</td>
+                        <td style="text-align: center;">M15</td>
+                        <td style="text-align: center; background-color: #f8fafc;">H4/H1/M15</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; font-weight: bold;">H4</td>
+                        <td style="text-align: center;">Daily, Weekly</td>
+                        <td style="text-align: center;">H1</td>
+                        <td style="text-align: center; background-color: #f8fafc;">Daily/H4/H1</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; font-weight: bold;">Daily</td>
+                        <td style="text-align: center;">Weekly, Monthly</td>
+                        <td style="text-align: center;">H1</td>
+                        <td style="text-align: center; background-color: #f8fafc;">Weekly/Daily/H1</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- 9.4.2 Giai đoạn hành vi sóng đẩy -->
+    <div class="step-box">
+        <h3 class="text-2xl font-bold text-indigo-700 mb-4">
+            <span class="process-number mr-4">9.4.2</span>
+            Các giai đoạn hành vi của 1 con sóng đẩy
+        </h3>
         
-        <div class="bg-white p-6 rounded-lg shadow-lg">
-            <h3 class="text-xl font-bold mb-4 text-yellow-600">
-                <i class="fas fa-star mr-2"></i><i class="fas fa-star mr-2"></i>Setup A+: NoSD + Cuối Sóng Pullback
-            </h3>
-            <p class="mb-3"><strong>Mục đích:</strong> Entry tại cuối sóng hồi</p>
-            <div class="bg-yellow-50 p-4 rounded">
-                <h4 class="font-bold mb-2">Điều kiện Entry:</h4>
-                <ul class="space-y-1">
-                    <li>• Trend HTF rõ ràng</li>
-                    <li>• Đang trong pha pullback/correction</li>
-                    <li>• NoSD xuất hiện tại level quan trọng</li>
-                    <li>• Volume khô cạn trong pullback</li>
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded">
+                <h4 class="font-bold text-green-700 mb-3">
+                    <i class="fas fa-arrow-up mr-2"></i>Giai đoạn 1: Đẩy hợp lệ
+                </h4>
+                <p class="text-sm mb-2">
+                    Để 1 con sóng tăng, MM cần đẩy giá với volume đồng thuận tăng, 
+                    thể hiện có sự hợp lệ giữa giá và khối lượng của 1 sóng đẩy.
+                </p>
+                <p class="font-semibold text-green-600">→ Chờ BUY</p>
+            </div>
+            
+            <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded">
+                <h4 class="font-bold text-red-700 mb-3">
+                    <i class="fas fa-arrow-down mr-2"></i>Giai đoạn 2: Đẩy không hợp lệ (kiệt sức)
+                </h4>
+                <p class="text-sm mb-2">
+                    Là 1 sóng tăng nhưng có volume giảm hoặc thấp so với lượng đẩy trước đó, 
+                    thể hiện phe buy không tham gia mạnh mẽ.
+                </p>
+                <p class="font-semibold text-red-600">→ Có thể gọi đây là hành vi dò đỉnh</p>
+            </div>
+        </div>
+
+        <div class="bg-blue-50 p-4 rounded-lg mt-4">
+            <p class="text-sm">
+                <strong>Bài tập:</strong> Đọc sóng đẩy, backtest thật nhiều để hiểu về thanh khoản và hành vi của 1 con sóng
+            </p>
+        </div>
+    </div>
+
+    <!-- 9.4.3 Cấu trúc ABCD -->
+    <div class="step-box">
+        <h3 class="text-2xl font-bold text-teal-700 mb-4">
+            <span class="process-number mr-4">9.4.3</span>
+            Cấu trúc thị trường theo ABCD by DC7
+        </h3>
+        
+        <div class="space-y-6">
+            <div class="bg-teal-50 p-6 rounded-lg">
+                <h4 class="font-bold text-teal-700 mb-3">Tương quan vị trí trong Cấu trúc ABCD by DC7</h4>
+                <p class="text-sm leading-relaxed">
+                    Giá hình thành sóng đẩy trước đó tạo đỉnh tại <strong>A</strong>, Retest thành công tại <strong>B</strong>, 
+                    giá tiếp cận vùng đỉnh cũ <strong>C</strong>, và Break thành công tạo đỉnh mới <strong>D</strong>.
+                </p>
+                <p class="mt-2 font-semibold">
+                    Vì là sóng đẩy A, do đó cần tìm điểm vào lệnh khi giá Retest lại vùng đẩy của sóng đẩy A.
+                </p>
+                <p class="text-blue-600 font-bold mt-2">
+                    Câu hỏi: Xác định vùng đẩy của sóng A như thế nào?
+                </p>
+            </div>
+
+            <div class="bg-orange-50 p-6 rounded-lg">
+                <h4 class="font-bold text-orange-700 mb-3">Tương quan vị trí theo cấu trúc ABCD-Dfail</h4>
+                <p class="text-sm leading-relaxed mb-3">
+                    Giá hình thành sóng đẩy trước đó tạo đỉnh tại <strong>A</strong>, Retest thành công tại <strong>B</strong>, 
+                    giá tiếp cận vùng đỉnh cũ <strong>C</strong>, và Break C, và tạo đỉnh mới <strong>D</strong>, 
+                    tại D hình thành Fail Breakout (DFail) giá quay lại trong range của AC.
+                </p>
+                <p class="font-semibold text-orange-700">
+                    <strong>Concept của bài đánh này:</strong> Giá sẽ tiếp cận lại cùng đẩy cực trị của Sóng A (target), 
+                    cần timing entry khi giá tạo FBO tại D.
+                </p>
+            </div>
+
+            <div class="bg-purple-50 p-4 rounded-lg">
+                <p class="text-sm font-semibold">
+                    <strong>Bài tập:</strong> Hãy thực hành xác định cấu trúc ABCD, ABCD fail trong chart
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 9.4.4 & 9.4.5 Key Level và Kết quả -->
+    <div class="step-box">
+        <h3 class="text-2xl font-bold text-cyan-700 mb-4">
+            <span class="process-number mr-4">9.4.4-5</span>
+            Key Level & Kết quả phân tích
+        </h3>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-cyan-50 p-6 rounded-lg">
+                <h4 class="font-bold text-cyan-700 mb-3">
+                    <i class="fas fa-key mr-2"></i>Quy trình phân tích theo Key Level (Volume Profile)
+                </h4>
+                <ul class="space-y-2 text-sm">
+                    <li>• Các bước phân tích</li>
+                    <li>• Kết quả phân tích → để xác định key level</li>
+                    <li>• Kế hoạch giao dịch</li>
+                </ul>
+            </div>
+            
+            <div class="bg-emerald-50 p-6 rounded-lg">
+                <h4 class="font-bold text-emerald-700 mb-3">
+                    <i class="fas fa-bullseye mr-2"></i>Kết quả của 1 quá trình phân tích
+                </h4>
+                <ul class="space-y-2 text-sm">
+                    <li>• Xác định được vùng hút giá</li>
+                    <li>• Xác định vùng có khả năng giá đảo chiều</li>
+                    <li>• Lập kế hoạch giao dịch</li>
                 </ul>
             </div>
         </div>
+    </div>
+</section>
+
+<!-- 4. QUY TRÌNH 2: TIMING ENTRY -->
+<section class="mb-16">
+    <h2 class="text-4xl font-bold text-blue-800 section-divider">
+        <i class="fas fa-crosshairs mr-3"></i>
+        4. QUY TRÌNH 2: TIMING ENTRY (9.5)
+    </h2>
+
+    <!-- 9.5.1 Tư duy bài đánh -->
+    <div class="step-box">
+        <h3 class="text-2xl font-bold text-green-700 mb-4">
+            <span class="process-number mr-4">9.5.1</span>
+            Tư duy bài đánh
+        </h3>
         
-        <div class="bg-white p-6 rounded-lg shadow-lg">
-            <h3 class="text-xl font-bold mb-4 text-green-600">
-                <i class="fas fa-star mr-2"></i><i class="fas fa-star mr-2"></i><i class="fas fa-star mr-2"></i>Setup A++: Bob Volman + Kill Liquidity
+        <div class="bg-green-50 p-6 rounded-lg mb-6">
+            <p class="text-lg leading-relaxed">
+                Các bài đánh hiệu quả khi giá tiếp cận 1 vùng giao dịch, với mỗi bài đánh, 
+                cần có các bước rất cụ thể, để bạn có thể trade như 1 cái máy.
+            </p>
+        </div>
+
+        <div class="space-y-6">
+            <!-- Vị trí đánh trong ABCD -->
+            <div class="bg-white p-6 border-l-4 border-green-500">
+                <h4 class="font-bold text-green-700 mb-3">Vị trí đánh trong tương quan ABCD:</h4>
+                <p class="mb-2">Đánh tại vị trí <strong>B hoặc D</strong>, ưu tiên đánh tại <strong>B</strong>, không đánh tại C</p>
+                <div class="bg-green-100 p-3 rounded">
+                    <p class="font-semibold text-green-800">
+                        <i class="fas fa-star mr-2"></i>Setup A++: Đánh ở B, kiệt sức sóng hồi, an toàn nhất và có tỉ lệ reward cao nhất
+                    </p>
+                </div>
+            </div>
+
+            <!-- 4 điều kiện tín hiệu quan trọng -->
+            <div class="bg-blue-50 p-6 rounded-lg">
+                <h4 class="font-bold text-blue-700 mb-4">
+                    <i class="fas fa-list-ol mr-2"></i>Tín hiệu quan trọng cần có 4 điều kiện:
+                </h4>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="space-y-3">
+                        <div class="bg-white p-4 rounded border-l-4 border-red-500">
+                            <h5 class="font-bold text-red-700">[1] Kiệt sức</h5>
+                            <p class="text-sm">Volume giảm dần, hành vi dò đỉnh/đáy</p>
+                        </div>
+                        <div class="bg-white p-4 rounded border-l-4 border-orange-500">
+                            <h5 class="font-bold text-orange-700">[2] Lấy thanh khoản</h5>
+                            <p class="text-sm">Hình thành Trap, sweep liquidity</p>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-white p-4 rounded border-l-4 border-yellow-500">
+                            <h5 class="font-bold text-yellow-700">[3] Đóng nến đảo chiều</h5>
+                            <p class="text-sm">Bẻ nến fill là nến đâm thanh khoản</p>
+                        </div>
+                        <div class="bg-white p-4 rounded border-l-4 border-green-500">
+                            <h5 class="font-bold text-green-700">[4] Volume đối lập tham gia</h5>
+                            <p class="text-sm">Xác nhận giai đoạn kiệt sức kết thúc</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Entry setups -->
+            <div class="bg-gray-50 p-6 rounded-lg">
+                <h4 class="font-bold text-gray-700 mb-3">
+                    <i class="fas fa-play mr-2"></i>Entry Setups:
+                </h4>
+                <div class="space-y-2 text-sm">
+                    <p>• Entry theo Setup nến NoSD bar pair</p>
+                    <p>• Entry theo Setup SFP confirmation</p>
+                    <p>• Entry theo Setup Break Bobvolman</p>
+                    <p class="font-semibold text-blue-600">• Đã có SL và Target thì lựa chọn mà Entry (điểm entry không cần cầu kỳ)</p>
+                </div>
+            </div>
+
+            <!-- Kiến thức cần có -->
+            <div class="bg-yellow-50 p-6 rounded-lg">
+                <h4 class="font-bold text-yellow-700 mb-3">
+                    <i class="fas fa-book mr-2"></i>Kiến thức chính cần có để đánh được bài này:
+                </h4>
+                <ul class="space-y-2 text-sm">
+                    <li>• Vẽ được sóng đẩy và sóng hồi theo cấu trúc giá</li>
+                    <li>• Đánh giá hành vi trong sóng: bóc tách được pha đẩy và pha suy yếu</li>
+                    <li>• Đọc được hành vi giá(nến) kết hợp với từng thanh khối lượng (volume bar)</li>
+                    <li>• Hiểu về bộ nến NoSD đảo chiều</li>
+                    <li>• Hiểu về hành vi Trap, Stop Hunt, FBO, Sweep thanh khoản</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 9.5.2 Vào lệnh có cam kết -->
+    <div class="step-box">
+        <h3 class="text-2xl font-bold text-red-700 mb-4">
+            <span class="process-number mr-4">9.5.2</span>
+            Vào lệnh có cam kết
+        </h3>
+        
+        <div class="bg-red-50 p-6 rounded-lg mb-6">
+            <p class="text-lg leading-relaxed mb-4">
+                <strong>Vào lệnh có cam kết là gì?</strong>
+            </p>
+            <p class="leading-relaxed">
+                Đó là một thái độ nghiêm túc với từng giao dịch, là sự khác biệt giữa một trader nghiệp dư và một trader chuyên nghiệp. 
+                Rất nhiều người dễ dãi với thị trường, nhảy vào lệnh khi chưa đủ điều kiện, khi tín hiệu còn mập mờ, 
+                hoặc đơn giản chỉ vì cảm xúc thôi thúc.
+            </p>
+        </div>
+
+        <div class="space-y-6">
+            <div class="bg-white p-6 border-l-4 border-red-500">
+                <h4 class="font-bold text-red-700 mb-3">Một lệnh có cam kết thể hiện:</h4>
+                <ul class="space-y-2 text-sm">
+                    <li>• Sự trân trọng đối với đồng vốn</li>
+                    <li>• Sự tôn trọng với những nguyên tắc đã đề ra</li>
+                    <li>• Chấp nhận trách nhiệm từ entry đến exit</li>
+                    <li>• <strong>Là 1 lệnh có đủ điều kiện entry theo bài đánh</strong></li>
+                </ul>
+            </div>
+
+            <div class="bg-blue-50 p-6 rounded-lg">
+                <h4 class="font-bold text-blue-700 mb-3">Trong quá trình giao dịch, một lệnh có cam kết phải:</h4>
+                <ul class="space-y-2 text-sm">
+                    <li>• Đặt và tuân thủ stop loss</li>
+                    <li>• Kiểm soát điểm hòa vốn (BE)</li>
+                    <li>• Điều chỉnh trailing stop theo kịch bản thị trường</li>
+                </ul>
+            </div>
+
+            <div class="bg-green-50 p-6 rounded-lg">
+                <h4 class="font-bold text-green-700 mb-3">Sau mỗi lệnh, quá trình cam kết tiếp tục:</h4>
+                <p class="text-sm leading-relaxed">
+                    Trader cần nhìn lại trade vừa qua: đánh giá mức độ đúng sai trong bài phân tích, 
+                    cách quản lý lệnh, và cả cảm xúc trong lúc giao dịch. 
+                    Đây chính là những mảnh ghép quý giá giúp bạn cải tiến từng bước.
+                </p>
+            </div>
+
+            <div class="highlight-box">
+                <p class="font-semibold text-lg text-center">
+                    <i class="fas fa-quote-left mr-2"></i>
+                    Mỗi lệnh giao dịch, nếu được thực hiện bằng cam kết trọn vẹn, sẽ không chỉ mang lại lợi nhuận, 
+                    mà còn giúp bạn tiến gần hơn đến sự hoàn thiện trong hành trình trở thành một trader chuyên nghiệp.
+                    <i class="fas fa-quote-right ml-2"></i>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 5. QUY TRÌNH 3: QUẢN LÝ VỊ THẾ -->
+<section class="mb-16">
+    <h2 class="text-4xl font-bold text-blue-800 section-divider">
+        <i class="fas fa-tasks mr-3"></i>
+        5. QUY TRÌNH 3: QUẢN LÝ VỊ THẾ ĐANG MỞ (9.6)
+    </h2>
+
+    <div class="bg-blue-50 p-6 rounded-lg mb-8">
+        <p class="text-lg leading-relaxed">
+            Một lệnh giao dịch không chỉ quan trọng ở điểm vào mà còn ở cách quản lý sau khi đã mở vị thế. 
+            Nhiều trader thất bại không phải vì điểm vào sai, mà vì thiếu một phương pháp quản lý nhất quán. 
+            Dưới đây là ba phương pháp quản lý vị thế phổ biến và hiệu quả nhất.
+        </p>
+    </div>
+
+    <div class="space-y-8">
+        <!-- Phương pháp 1: BE và Trailing Stop -->
+        <div class="step-box">
+            <h3 class="text-xl font-bold text-green-700 mb-4">
+                <i class="fas fa-shield-alt mr-2"></i>1. Quản Lý Theo BE (Break-even) và Trailing Stop
             </h3>
-            <p class="mb-3"><strong>Setup cao cấp nhất với tỷ lệ thắng cao</strong></p>
-            <div class="grid md:grid-cols-2 gap-4">
-                <div class="bg-green-50 p-4 rounded">
-                    <h4 class="font-bold mb-2 text-green-700">Long Entry:</h4>
-                    <ul class="space-y-1 text-sm">
-                        <li>• Pha tăng mạnh → hold trên đỉnh</li>
-                        <li>• Pullback tạo trendline</li>
-                        <li>• Break lên EMA18</li>
-                        <li>• Có sweep liquidity trước break</li>
-                        <li>• Entry khi pullback sau break</li>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-green-50 p-6 rounded-lg">
+                    <h4 class="font-bold text-green-700 mb-3">Nguyên tắc</h4>
+                    <p class="text-sm">
+                        Khi giá đi đúng hướng một khoảng nhất định (ví dụ đạt R=1 hoặc vượt qua vùng cản quan trọng), 
+                        dời stoploss về điểm vào lệnh (BE). Sau đó, sử dụng trailing stop để khóa dần lợi nhuận.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-6 border-l-4 border-green-500">
+                    <h4 class="font-bold text-green-700 mb-3">Ưu điểm</h4>
+                    <ul class="text-sm space-y-1">
+                        <li>• An toàn tuyệt đối cho vốn</li>
+                        <li>• Giảm áp lực tâm lý</li>
+                    </ul>
+                    <h4 class="font-bold text-red-700 mb-2 mt-3">Nhược điểm</h4>
+                    <ul class="text-sm space-y-1">
+                        <li>• Thường bị "quét BE"</li>
+                        <li>• Mất cơ hội khi thị trường rung lắc</li>
                     </ul>
                 </div>
-                <div class="bg-red-50 p-4 rounded">
-                    <h4 class="font-bold mb-2 text-red-700">Short Entry:</h4>
-                    <ul class="space-y-1 text-sm">
-                        <li>• Pha giảm mạnh → nén đi ngang</li>
-                        <li>• Volume show sự đối lập</li>
-                        <li>• Trading range formation</li>
-                        <li>• Break trendline + EMA18</li>
-                        <li>• Có sweep liquidity trước break</li>
+                
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h4 class="font-bold text-gray-700 mb-3">Phù hợp</h4>
+                    <p class="text-sm">
+                        Trader ưu tiên an toàn vốn, đề cao tính kỷ luật hơn là tối đa hóa lợi nhuận.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phương pháp 2: Scaling Out -->
+        <div class="step-box">
+            <h3 class="text-xl font-bold text-yellow-700 mb-4">
+                <i class="fas fa-layer-group mr-2"></i>2. Chốt Lời Từng Phần (Scaling Out)
+            </h3>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-yellow-50 p-6 rounded-lg">
+                    <h4 class="font-bold text-yellow-700 mb-3">Nguyên tắc</h4>
+                    <p class="text-sm">
+                        Không đóng toàn bộ vị thế tại một điểm duy nhất, mà chia lệnh thành nhiều phần 
+                        để thoát dần theo các mốc lợi nhuận khác nhau.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-6 border-l-4 border-yellow-500">
+                    <h4 class="font-bold text-yellow-700 mb-3">Ví dụ với 1 lot:</h4>
+                    <ul class="text-sm space-y-1">
+                        <li>• Chốt 0.3 lot ở R=1 để đảm bảo lợi nhuận</li>
+                        <li>• Chốt 0.3 lot ở R=2 để gia tăng thành quả</li>
+                        <li>• Giữ 0.4 lot cuối cùng, đi theo xu hướng lớn</li>
                     </ul>
+                </div>
+                
+                <div class="bg-white p-6 border-l-4 border-gray-500">
+                    <h4 class="font-bold text-green-700 mb-2">Ưu điểm</h4>
+                    <p class="text-sm mb-2">Vừa an toàn, vừa có cơ hội tận dụng sóng lớn</p>
+                    <h4 class="font-bold text-red-700 mb-2">Nhược điểm</h4>
+                    <p class="text-sm">Tổng lợi nhuận có thể thấp hơn nếu giá đi thẳng</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phương pháp 3: Kết hợp -->
+        <div class="step-box">
+            <h3 class="text-xl font-bold text-purple-700 mb-4">
+                <i class="fas fa-puzzle-piece mr-2"></i>3. Phương Án Kết Hợp
+            </h3>
+            
+            <div class="bg-purple-50 p-6 rounded-lg mb-6">
+                <h4 class="font-bold text-purple-700 mb-3">Nguyên tắc:</h4>
+                <p class="text-sm mb-4">
+                    Dùng cả hai phương pháp trên để vừa bảo toàn vốn, vừa tận dụng cơ hội tối đa.
+                </p>
+                
+                <h4 class="font-bold text-purple-700 mb-3">Cách thực hiện:</h4>
+                <ul class="text-sm space-y-2">
+                    <li>• <strong>Bước 1:</strong> Khi giá đi đủ xa, dời stoploss về BE để loại bỏ rủi ro</li>
+                    <li>• <strong>Bước 2:</strong> Đồng thời chia vị thế thành nhiều phần để thoát dần theo các mức lợi nhuận kỳ vọng</li>
+                    <li>• <strong>Bước 3:</strong> Phần vị thế cuối cùng được "thả trôi" theo xu hướng lớn, với trailing stop bảo vệ</li>
+                </ul>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-green-100 p-4 rounded border-l-4 border-green-500">
+                    <h5 class="font-bold text-green-700 mb-2">Ưu điểm</h5>
+                    <p class="text-sm">Toàn diện nhất – vừa bảo vệ vốn, vừa có cơ hội ăn sóng lớn</p>
+                </div>
+                
+                <div class="bg-red-100 p-4 rounded border-l-4 border-red-500">
+                    <h5 class="font-bold text-red-700 mb-2">Nhược điểm</h5>
+                    <p class="text-sm">Yêu cầu kỷ luật cao và khả năng linh hoạt trong quản lý lệnh</p>
+                </div>
+                
+                <div class="bg-blue-100 p-4 rounded border-l-4 border-blue-500">
+                    <h5 class="font-bold text-blue-700 mb-2">Phù hợp</h5>
+                    <p class="text-sm">Trader có kinh nghiệm, sẵn sàng dành thời gian quan sát và điều chỉnh</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kết luận -->
+        <div class="highlight-box">
+            <h4 class="text-xl font-bold mb-4">
+                <i class="fas fa-key mr-2"></i>Kết luận
+            </h4>
+            <p class="leading-relaxed">
+                Quản lý vị thế là chiếc chìa khóa để biến một hệ thống giao dịch từ "tạm thời có lời" thành "bền vững dài hạn". 
+                Hãy chọn phương pháp phù hợp với tính cách, mục tiêu và phong cách giao dịch của bạn. 
+                Một số trader chỉ trung thành với một cách duy nhất, nhưng nhiều trader chuyên nghiệp thường áp dụng phương án kết hợp, 
+                bởi đó là cách dung hòa tốt nhất giữa <strong>an toàn – lợi nhuận – tâm lý</strong>.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- 6. QUY TRÌNH 4: CẢI TIẾN CHẤT LƯỢNG -->
+<section class="mb-16">
+    <h2 class="text-4xl font-bold text-blue-800 section-divider">
+        <i class="fas fa-chart-line mr-3"></i>
+        6. QUY TRÌNH 4: CẢI TIẾN CHẤT LƯỢNG GIAO DỊCH (9.7)
+    </h2>
+
+    <div class="bg-orange-50 p-6 rounded-lg mb-8">
+        <p class="text-lg leading-relaxed">
+            Một trader chuyên nghiệp không chỉ tìm kiếm lợi nhuận, mà còn luôn tìm cách cải tiến chất lượng giao dịch của mình. 
+            Cải tiến ở đây không phải là thay đổi liên tục, mà là một quá trình từng bước hoàn thiện: 
+            giữ lại những gì hiệu quả, loại bỏ những gì gây hại, và liên tục tinh chỉnh cho phù hợp với bản thân cũng như thị trường.
+        </p>
+    </div>
+
+    <div class="space-y-8">
+        <!-- 9.7.1 Cải tiến từng lệnh -->
+        <div class="step-box">
+            <h3 class="text-xl font-bold text-red-700 mb-4">
+                <span class="process-number mr-4">9.7.1</span>
+                Cải Tiến Từng Lệnh
+            </h3>
+            
+            <div class="bg-red-50 p-6 rounded-lg mb-6">
+                <p class="text-lg leading-relaxed mb-4">
+                    Mỗi lệnh giao dịch không chỉ để kiếm tiền, mà còn là một cơ hội học hỏi. 
+                    Sau khi đóng lệnh, hãy tự hỏi:
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 border-l-4 border-red-500">
+                    <h4 class="font-bold text-red-700 mb-3">
+                        <i class="fas fa-question-circle mr-2"></i>3 câu hỏi then chốt:
+                    </h4>
+                    <ol class="text-sm space-y-2">
+                        <li><strong>1.</strong> Tôi đã vào lệnh có cam kết hay chưa?</li>
+                        <li><strong>2.</strong> Tôi đã vào đúng bài trade mà mình chuẩn bị hay chưa?</li>
+                        <li><strong>3.</strong> Tôi có tuân thủ đầy đủ nguyên tắc vào lệnh, khối lượng, stop loss và cách quản lý lệnh không?</li>
+                    </ol>
+                </div>
+                
+                <div class="bg-yellow-50 p-6 rounded-lg">
+                    <h4 class="font-bold text-yellow-700 mb-3">Nếu câu trả lời là "chưa":</h4>
+                    <p class="text-sm mb-3">Bạn cần ghi rõ nguyên nhân và đưa ra giải pháp khắc phục.</p>
+                    <p class="text-sm font-semibold">
+                        Ví dụ: nếu vào lệnh vì FOMO, hãy viết ra cách xử lý cụ thể.
+                    </p>
+                </div>
+                
+                <div class="bg-blue-50 p-6 rounded-lg">
+                    <h4 class="font-bold text-blue-700 mb-3">Giải pháp cụ thể:</h4>
+                    <ul class="text-sm space-y-1">
+                        <li>• Chỉ được phép vào lệnh khi đầy đủ 3 điều kiện tối thiểu</li>
+                        <li>• Chờ đủ tín hiệu xác nhận</li>
+                        <li>• Cấm nhảy lệnh vì cảm xúc</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 9.7.2 Cải tiến quy trình phân tích -->
+        <div class="step-box">
+            <h3 class="text-xl font-bold text-green-700 mb-4">
+                <span class="process-number mr-4">9.7.2</span>
+                Cải Tiến Quy Trình Phân Tích
+            </h3>
+            
+            <div class="bg-green-50 p-6 rounded-lg mb-6">
+                <p class="text-lg leading-relaxed">
+                    Một hệ thống giao dịch tốt bắt đầu từ phân tích tốt. Sau mỗi lệnh, cần đánh giá lại:
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 border-l-4 border-green-500">
+                    <h4 class="font-bold text-green-700 mb-3">Câu hỏi đánh giá:</h4>
+                    <ul class="text-sm space-y-2">
+                        <li>• Phân tích xu hướng có chính xác không?</li>
+                        <li>• Setup giao dịch có rõ ràng hay còn mơ hồ?</li>
+                        <li>• Có bỏ sót yếu tố quan trọng nào không?</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-blue-50 p-6 rounded-lg">
+                    <h4 class="font-bold text-blue-700 mb-3">Mục tiêu cải tiến:</h4>
+                    <p class="text-sm">
+                        Tinh chỉnh quy trình phân tích để lần sau nhìn thị trường sáng rõ hơn, 
+                        loại bỏ suy đoán cảm tính.
+                    </p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h4 class="font-bold text-gray-700 mb-3">Kết quả mong đợi:</h4>
+                    <p class="text-sm">
+                        Quy trình phân tích ngày càng chính xác và nhất quán.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 9.7.3 Cải tiến timing entry -->
+        <div class="step-box">
+            <h3 class="text-xl font-bold text-blue-700 mb-4">
+                <span class="process-number mr-4">9.7.3</span>
+                Cải Tiến Quy Trình Timing Entry
+            </h3>
+            
+            <div class="bg-blue-50 p-6 rounded-lg mb-6">
+                <p class="text-lg leading-relaxed">
+                    Thị trường có thể đúng, phân tích có thể chuẩn, nhưng vào sai thời điểm thì kết quả vẫn thất bại. 
+                    Vì vậy, trader cần rèn luyện timing entry – chọn đúng điểm vào lệnh:
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 border-l-4 border-blue-500">
+                    <h4 class="font-bold text-blue-700 mb-3">Các vấn đề thường gặp:</h4>
+                    <ul class="text-sm space-y-2">
+                        <li>• Có vào quá sớm, khi tín hiệu chưa hoàn tất?</li>
+                        <li>• Có vào quá muộn, khi thị trường đã đi mất cơ hội?</li>
+                        <li>• Có tuân thủ đúng setup đã chuẩn bị không?</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-purple-50 p-6 rounded-lg">
+                    <h4 class="font-bold text-purple-700 mb-3">Lợi ích của việc cải tiến:</h4>
+                    <p class="text-sm">
+                        Việc cải tiến timing entry giúp bạn vào lệnh chính xác và giảm rủi ro ngay từ ban đầu.
+                    </p>
+                </div>
+                
+                <div class="bg-orange-50 p-6 rounded-lg">
+                    <h4 class="font-bold text-orange-700 mb-3">Phương pháp cải tiến:</h4>
+                    <p class="text-sm">
+                        Ghi nhận từng lần entry và phân tích xem có thể cải thiện timing như thế nào.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 9.7.4 Cải tiến quản lý lệnh -->
+        <div class="step-box">
+            <h3 class="text-xl font-bold text-purple-700 mb-4">
+                <span class="process-number mr-4">9.7.4</span>
+                Cải Tiến Quy Trình Quản Lý Lệnh
+            </h3>
+            
+            <div class="bg-purple-50 p-6 rounded-lg mb-6">
+                <p class="text-lg leading-relaxed">
+                    Một lệnh có cam kết không chỉ dừng lại ở việc mở, mà phải được quản lý xuyên suốt:
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 border-l-4 border-purple-500">
+                    <h4 class="font-bold text-purple-700 mb-3">3 trụ cột quản lý:</h4>
+                    <ul class="text-sm space-y-2">
+                        <li>• Đặt và giữ kỷ luật với stop loss</li>
+                        <li>• Kiểm soát điểm hòa vốn (BE)</li>
+                        <li>• Sử dụng trailing stop hợp lý theo kịch bản thị trường</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-red-50 p-6 rounded-lg">
+                    <h4 class="font-bold text-red-700 mb-3">Nguyên tắc cải tiến:</h4>
+                    <p class="text-sm">
+                        Mỗi sai sót trong quản lý lệnh đều cần được ghi nhận và đưa ra giải pháp cụ thể để tránh lặp lại.
+                    </p>
+                </div>
+                
+                <div class="bg-green-50 p-6 rounded-lg">
+                    <h4 class="font-bold text-green-700 mb-3">Mục tiêu cuối cùng:</h4>
+                    <p class="text-sm">
+                        Quản lý lệnh trở thành thói quen tự nhiên, không cần suy nghĩ nhiều.
+                    </p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- 5. QUẢN LÝ LỆNH CHI TIẾT -->
-<section class="mb-12">
-    <h2 class="text-3xl font-bold text-blue-600 section-divider">
-        <i class="fas fa-cog mr-2"></i>
-        5. QUẢN LÝ LỆNH CHI TIẾT
+<!-- 7. MẪU NHẬT KÝ GIAO DỊCH -->
+<section class="mb-16">
+    <h2 class="text-4xl font-bold text-blue-800 section-divider">
+        <i class="fas fa-book mr-3"></i>
+        7. MẪU NHẬT KÝ GIAO DỊCH (9.7.5)
     </h2>
-    
-    <div class="bg-white p-6 rounded-lg shadow-lg">
-        <table class="trading-table">
-            <thead>
-                <tr>
-                    <th>Giai Đoạn</th>
-                    <th>Điều Kiện</th>
-                    <th>Hành Động</th>
-                    <th>Mục Đích</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Initial Setup</strong></td>
-                    <td>Entry được thực hiện</td>
-                    <td>Đặt SL ban đầu<br>Xác định TP1, TP2</td>
-                    <td>Bảo vệ vốn</td>
-                </tr>
-                <tr>
-                    <td><strong>Đạt 2R</strong></td>
-                    <td>Lợi nhuận = 2 × Risk</td>
-                    <td>Chốt 1/2 position<br>Dời SL = Entry</td>
-                    <td>Lock profit</td>
-                </tr>
-                <tr>
-                    <td><strong>Đạt 3R</strong></td>
-                    <td>Lợi nhuận = 3 × Risk</td>
-                    <td>Kích hoạt Trailing Stop<br>Khoảng cách = 2R</td>
-                    <td>Tối ưu lợi nhuận</td>
-                </tr>
-                <tr>
-                    <td><strong>Theo dõi</strong></td>
-                    <td>M15 trở lên</td>
-                    <td>Quan sát điều kiện entry<br>Cân nhắc cắt sớm</td>
-                    <td>Linh hoạt</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</section>
 
-<!-- 6. FORM ĐÁNH GIÁ TỪNG LỆNH -->
-<section class="mb-12">
-    <h2 class="text-3xl font-bold text-blue-600 section-divider">
-        <i class="fas fa-clipboard-check mr-2"></i>
-        6. MẪU ĐÁNH GIÁ TỪNG LỆNH GIAO DỊCH
-    </h2>
-    
-    <div class="bg-white p-6 rounded-lg shadow-lg mb-6">
-        <h3 class="text-xl font-bold mb-4 text-center">TRADING JOURNAL - DC7 SYSTEM</h3>
+    <div class="bg-white p-8 rounded-lg shadow-xl border">
+        <h3 class="text-2xl font-bold text-center mb-8 text-blue-800">
+            <i class="fas fa-clipboard-list mr-2"></i>
+            📒 NHẬT KÝ GIAO DỊCH
+        </h3>
         
         <!-- Thông tin cơ bản -->
-        <table class="trading-table mb-6">
-            <thead>
-                <tr style="background-color: #e5e7eb;">
-                    <th colspan="8" style="text-align: center; font-size: 16px;">THÔNG TIN CỦA GIAO DỊCH</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Ngày:</strong></td>
-                    <td style="width: 100px;">_____________</td>
-                    <td><strong>Thời gian:</strong></td>
-                    <td style="width: 100px;">_____________</td>
-                    <td><strong>Cặp tiền:</strong></td>
-                    <td style="width: 100px;">_____________</td>
-                    <td><strong>Setup:</strong></td>
-                    <td style="width: 100px;">⬜ A ⬜ A+ ⬜ A++</td>
-                </tr>
-                <tr>
-                    <td><strong>Entry:</strong></td>
-                    <td>_____________</td>
-                    <td><strong>Stop Loss:</strong></td>
-                    <td>_____________</td>
-                    <td><strong>Risk (R):</strong></td>
-                    <td>_____________</td>
-                    <td><strong>Lot Size:</strong></td>
-                    <td>_____________</td>
-                </tr>
-                <tr>
-                    <td><strong>TP1:</strong></td>
-                    <td>_____________</td>
-                    <td><strong>TP2:</strong></td>
-                    <td>_____________</td>
-                    <td><strong>R/R Ratio:</strong></td>
-                    <td>_____________</td>
-                    <td><strong>Direction:</strong></td>
-                    <td>⬜ Long ⬜ Short</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="mb-8">
+            <h4 class="text-lg font-bold mb-4 bg-gray-100 p-3 rounded">
+                THÔNG TIN CƠ BẢN
+            </h4>
+            <div class="grid md:grid-cols-2 gap-4 text-sm">
+                <div class="space-y-3">
+                    <div class="flex">
+                        <label class="w-48 font-semibold">Ngày giao dịch:</label>
+                        <span class="border-b border-dotted border-gray-400 flex-1">........................................</span>
+                    </div>
+                    <div class="flex">
+                        <label class="w-48 font-semibold">Cặp giao dịch / Sản phẩm:</label>
+                        <span class="border-b border-dotted border-gray-400 flex-1">........................................</span>
+                    </div>
+                    <div class="flex">
+                        <label class="w-48 font-semibold">Khung thời gian:</label>
+                        <span class="border-b border-dotted border-gray-400 flex-1">........................................</span>
+                    </div>
+                    <div class="flex">
+                        <label class="w-48 font-semibold">Setup / Bài trade sử dụng:</label>
+                        <span class="border-b border-dotted border-gray-400 flex-1">........................................</span>
+                    </div>
+                </div>
+                <div class="space-y-3">
+                    <div class="flex">
+                        <label class="w-32 font-semibold">Điểm vào lệnh (Entry):</label>
+                        <span class="border-b border-dotted border-gray-400 flex-1">........................</span>
+                    </div>
+                    <div class="flex">
+                        <label class="w-32 font-semibold">Stop Loss:</label>
+                        <span class="border-b border-dotted border-gray-400 flex-1">........................</span>
+                    </div>
+                    <div class="flex">
+                        <label class="w-32 font-semibold">Take Profit:</label>
+                        <span class="border-b border-dotted border-gray-400 flex-1">........................</span>
+                    </div>
+                    <div class="flex">
+                        <label class="w-32 font-semibold">Khối lượng giao dịch:</label>
+                        <span class="border-b border-dotted border-gray-400 flex-1">........................</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cam kết trước khi vào lệnh -->
+        <div class="mb-8">
+            <h4 class="text-lg font-bold mb-4 bg-blue-100 p-3 rounded">
+                CAM KẾT TRƯỚC KHI VÀO LỆNH
+            </h4>
+            <div class="space-y-3">
+                <label class="flex items-center text-sm">
+                    <input type="checkbox" class="mr-3 w-4 h-4"> 
+                    Tôi đã vào lệnh có cam kết chưa?
+                </label>
+                <label class="flex items-center text-sm">
+                    <input type="checkbox" class="mr-3 w-4 h-4"> 
+                    Tôi đã vào đúng bài trade chưa?
+                </label>
+                <label class="flex items-center text-sm">
+                    <input type="checkbox" class="mr-3 w-4 h-4"> 
+                    Tôi có tuân thủ đủ các điều kiện vào lệnh không?
+                </label>
+                <div class="flex mt-4">
+                    <label class="w-64 font-semibold text-sm">Tình trạng cảm xúc trước khi vào lệnh:</label>
+                    <span class="border-b border-dotted border-gray-400 flex-1">...............................</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quản lý lệnh -->
+        <div class="mb-8">
+            <h4 class="text-lg font-bold mb-4 bg-green-100 p-3 rounded">
+                QUẢN LÝ LỆNH
+            </h4>
+            <div class="space-y-3">
+                <label class="flex items-center text-sm">
+                    <input type="checkbox" class="mr-3 w-4 h-4"> 
+                    Đặt Stop Loss và giữ kỷ luật
+                </label>
+                <label class="flex items-center text-sm">
+                    <input type="checkbox" class="mr-3 w-4 h-4"> 
+                    Kiểm soát điểm hòa vốn (BE)
+                </label>
+                <label class="flex items-center text-sm">
+                    <input type="checkbox" class="mr-3 w-4 h-4"> 
+                    Điều chỉnh Trailing Stop
+                </label>
+                <div class="flex mt-4">
+                    <label class="w-64 font-semibold text-sm">Ghi chú trong quá trình quản lý lệnh:</label>
+                    <span class="border-b border-dotted border-gray-400 flex-1">...............................</span>
+                </div>
+            </div>
+        </div>
 
         <!-- Kết quả giao dịch -->
-        <table class="trading-table mb-6">
-            <thead>
-                <tr style="background-color: #fef3c7;">
-                    <th colspan="6" style="text-align: center; font-size: 16px;">KẾT QUẢ GIAO DỊCH</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Kết quả:</strong></td>
-                    <td>⬜ Win ⬜ Loss ⬜ BE</td>
-                    <td><strong>Exit Price:</strong></td>
-                    <td>_____________</td>
-                    <td><strong>P&L (R):</strong></td>
-                    <td>_____________</td>
-                </tr>
-                <tr>
-                    <td><strong>P&L ($):</strong></td>
-                    <td>_____________</td>
-                    <td><strong>Hold Time:</strong></td>
-                    <td>_____________</td>
-                    <td><strong>Max Drawdown:</strong></td>
-                    <td>_____________</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="mb-8">
+            <h4 class="text-lg font-bold mb-4 bg-yellow-100 p-3 rounded">
+                KẾT QUẢ GIAO DỊCH
+            </h4>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="space-y-3">
+                    <div class="flex items-center">
+                        <label class="w-20 font-semibold text-sm">Kết quả:</label>
+                        <div class="flex space-x-4">
+                            <label class="flex items-center"><input type="checkbox" class="mr-1"> Thắng</label>
+                            <label class="flex items-center"><input type="checkbox" class="mr-1"> Thua</label>
+                            <label class="flex items-center"><input type="checkbox" class="mr-1"> Hòa</label>
+                        </div>
+                    </div>
+                    <div class="flex">
+                        <label class="w-32 font-semibold text-sm">Số pip / điểm đạt được:</label>
+                        <span class="border-b border-dotted border-gray-400 flex-1">........................</span>
+                    </div>
+                </div>
+                <div class="space-y-3">
+                    <div class="flex">
+                        <label class="w-20 font-semibold text-sm">Tỷ lệ R/R:</label>
+                        <span class="border-b border-dotted border-gray-400 flex-1">........................</span>
+                    </div>
+                    <div class="flex">
+                        <label class="w-32 font-semibold text-sm">Cảm xúc sau khi đóng lệnh:</label>
+                        <span class="border-b border-dotted border-gray-400 flex-1">........................</span>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        <!-- Đánh giá chi tiết -->
-        <table class="trading-table mb-6">
-            <thead>
-                <tr style="background-color: #dbeafe;">
-                    <th colspan="4" style="text-align: center; font-size: 16px;">ĐÁNH GIÁ CHI TIẾT</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td colspan="4"><strong>1. Đã phân tích đúng 5 bước DC7?</strong></td>
-                </tr>
-                <tr>
-                    <td style="width: 25%;">⬜ Bộ 3 timeframe</td>
-                    <td style="width: 25%;">⬜ Giai đoạn thị trường</td>
-                    <td style="width: 25%;">⬜ Sóng đẩy + Volume</td>
-                    <td style="width: 25%;">⬜ Vùng thanh khoản</td>
-                </tr>
-                <tr>
-                    <td colspan="4"><strong>2. Điều kiện Setup có đầy đủ?</strong></td>
-                </tr>
-                <tr>
-                    <td>⬜ Price Action đúng</td>
-                    <td>⬜ Volume confirmation</td>
-                    <td>⬜ Key level test</td>
-                    <td>⬜ Timing chính xác</td>
-                </tr>
-                <tr>
-                    <td colspan="4"><strong>3. Quản lý lệnh theo quy trình?</strong></td>
-                </tr>
-                <tr>
-                    <td>⬜ SL đúng vị trí</td>
-                    <td>⬜ Dời SL khi đạt 2R</td>
-                    <td>⬜ TP theo kế hoạch</td>
-                    <td>⬜ Trailing stop đúng</td>
-                </tr>
-                <tr>
-                    <td colspan="4"><strong>4. Tâm lý & Cảm xúc</strong></td>
-                </tr>
-                <tr>
-                    <td>⬜ Không FOMO</td>
-                    <td>⬜ Không Revenge</td>
-                    <td>⬜ Tuân thủ kỷ luật</td>
-                    <td>⬜ Bình tĩnh ra quyết định</td>
-                </tr>
-            </tbody>
-        </table>
+        <!-- Review & Cải tiến -->
+        <div class="mb-8">
+            <h4 class="text-lg font-bold mb-4 bg-red-100 p-3 rounded">
+                REVIEW & CẢI TIẾN
+            </h4>
+            <div class="space-y-4">
+                <div>
+                    <label class="font-semibold text-sm">1. Tôi đã giữ cam kết giao dịch chưa?</label>
+                    <div class="border-b border-dotted border-gray-400 mt-1 h-6">...........................</div>
+                </div>
+                <div>
+                    <label class="font-semibold text-sm">2. Tôi đã vào đúng bài trade chưa?</label>
+                    <div class="border-b border-dotted border-gray-400 mt-1 h-6">...........................</div>
+                </div>
+                <div>
+                    <label class="font-semibold text-sm">3. Sai sót chính (nếu có):</label>
+                    <div class="border-b border-dotted border-gray-400 mt-1 h-6">...........................</div>
+                </div>
+                <div>
+                    <label class="font-semibold text-sm">4. Giải pháp khắc phục cho lần tới:</label>
+                    <div class="border-b border-dotted border-gray-400 mt-1 h-6">...........................</div>
+                </div>
+                <div>
+                    <label class="font-semibold text-sm">5. Bài học rút ra:</label>
+                    <div class="border-b border-dotted border-gray-400 mt-1 h-6">...........................</div>
+                </div>
+            </div>
+        </div>
 
-        <!-- Ghi chú và cải tiến -->
-        <table class="trading-table">
-            <thead>
-                <tr style="background-color: #fef2f2;">
-                    <th style="text-align: center; font-size: 16px;">GHI CHÚ & KẾ HOẠCH CẢI TIẾN</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td style="height: 80px; vertical-align: top;">
-                        <strong>Lý do thắng/thua:</strong><br>
-                        _________________________________________________________________________<br>
-                        _________________________________________________________________________
-                    </td>
-                </tr>
-                <tr>
-                    <td style="height: 80px; vertical-align: top;">
-                        <strong>Cảm xúc trong giao dịch:</strong><br>
-                        _________________________________________________________________________<br>
-                        _________________________________________________________________________
-                    </td>
-                </tr>
-                <tr>
-                    <td style="height: 80px; vertical-align: top;">
-                        <strong>Bài học rút ra:</strong><br>
-                        _________________________________________________________________________<br>
-                        _________________________________________________________________________
-                    </td>
-                </tr>
-                <tr>
-                    <td style="height: 80px; vertical-align: top;">
-                        <strong>Kế hoạch cải tiến cụ thể:</strong><br>
-                        _________________________________________________________________________<br>
-                        _________________________________________________________________________
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <!-- Hình minh họa giao dịch -->
+        <div class="mb-8">
+            <h4 class="text-lg font-bold mb-4 bg-purple-100 p-3 rounded">
+                HÌNH MINH HỌA GIAO DỊCH
+            </h4>
+            <div class="border-2 border-dashed border-gray-300 p-8 text-center text-gray-500">
+                Chèn hoặc dán ảnh chart Entry / Quản lý lệnh / Exit tại đây
+            </div>
+        </div>
     </div>
 
-    <!-- Bảng tổng kết tuần -->
-    <div class="bg-white p-6 rounded-lg shadow-lg">
-        <h3 class="text-xl font-bold mb-4 text-center">BÁO CÁO TUẦN</h3>
-        <table class="trading-table">
-            <thead>
-                <tr style="background-color: #f3f4f6;">
-                    <th>STT</th>
-                    <th>Ngày</th>
-                    <th>Cặp tiền</th>
-                    <th>Setup</th>
-                    <th>R/R</th>
-                    <th>Kết quả</th>
-                    <th>P&L (R)</th>
-                    <th>Ghi chú</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>1</td><td>____</td><td>____</td><td>____</td><td>____</td><td>____</td><td>____</td><td>________________</td></tr>
-                <tr><td>2</td><td>____</td><td>____</td><td>____</td><td>____</td><td>____</td><td>____</td><td>________________</td></tr>
-                <tr><td>3</td><td>____</td><td>____</td><td>____</td><td>____</td><td>____</td><td>____</td><td>________________</td></tr>
-                <tr><td>4</td><td>____</td><td>____</td><td>____</td><td>____</td><td>____</td><td>____</td><td>________________</td></tr>
-                <tr><td>5</td><td>____</td><td>____</td><td>____</td><td>____</td><td>____</td><td>____</td><td>________________</td></tr>
-                <tr style="background-color: #f9fafb; font-weight: bold;">
-                    <td colspan="6" style="text-align: center;">TỔNG KẾT</td>
-                    <td>____</td>
-                    <td>Win Rate: ____%</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</section>
-
-<!-- 7. CHECKLIST HÀNG NGÀY -->
-<section class="mb-12">
-    <h2 class="text-3xl font-bold text-blue-600 section-divider">
-        <i class="fas fa-list-check mr-2"></i>
-        7. CHECKLIST GIAO DỊCH HÀNG NGÀY
-    </h2>
-    
-    <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-white p-6 rounded-lg shadow-lg">
-            <h3 class="text-lg font-bold mb-4 text-green-600">
-                <i class="fas fa-sun mr-2"></i>TRƯỚC KHI GIAO DỊCH
-            </h3>
-            <div class="space-y-2">
-                <label class="flex items-center"><input type="checkbox" class="mr-2"> Phân tích HTF</label>
-                <label class="flex items-center"><input type="checkbox" class="mr-2"> Xác định trend chính</label>
-                <label class="flex items-center"><input type="checkbox" class="mr-2"> Tìm vùng thanh khoản</label>
-                <label class="flex items-center"><input type="checkbox" class="mr-2"> Lập kế hoạch trade</label>
-                <label class="flex items-center"><input type="checkbox" class="mr-2"> Kiểm tra news quan trọng</label>
-                <label class="flex items-center"><input type="checkbox" class="mr-2"> Chuẩn bị tâm lý</label>
-            </div>
-        </div>
-        
-        <div class="bg-white p-6 rounded-lg shadow-lg">
-            <h3 class="text-lg font-bold mb-4 text-blue-600">
-                <i class="fas fa-crosshairs mr-2"></i>TRONG QUÁ TRÌNH TRADE
-            </h3>
-            <div class="space-y-2">
-                <label class="flex items-center"><input type="checkbox" class="mr-2"> Chờ setup đúng</label>
-                <label class="flex items-center"><input type="checkbox" class="mr-2"> Tính toán risk 1R</label>
-                <label class="flex items-center"><input type="checkbox" class="mr-2"> Entry theo kế hoạch</label>
-                <label class="flex items-center"><input type="checkbox" class="mr-2"> Đặt SL ngay</label>
-                <label class="flex items-center"><input type="checkbox" class="mr-2"> Theo dõi quản lý</label>
-                <label class="flex items-center"><input type="checkbox" class="mr-2"> Kiểm soát cảm xúc</label>
-            </div>
-        </div>
-        
-        <div class="bg-white p-6 rounded-lg shadow-lg">
-            <h3 class="text-lg font-bold mb-4 text-red-600">
-                <i class="fas fa-moon mr-2"></i>CUỐI NGÀY
-            </h3>
-            <div class="space-y-2">
-                <label class="flex items-center"><input type="checkbox" class="mr-2"> Review từng lệnh</label>
-                <label class="flex items-center"><input type="checkbox" class="mr-2"> Ghi trading journal</label>
-                <label class="flex items-center"><input type="checkbox" class="mr-2"> Phân tích lỗi sai</label>
-                <label class="flex items-center"><input type="checkbox" class="mr-2"> Kế hoạch cải tiến</label>
-                <label class="flex items-center"><input type="checkbox" class="mr-2"> Cập nhật statistics</label>
-                <label class="flex items-center"><input type="checkbox" class="mr-2"> Chuẩn bị ngày mai</label>
-            </div>
-        </div>
+    <!-- Hướng dẫn sử dụng -->
+    <div class="mt-8 bg-blue-50 p-6 rounded-lg">
+        <h4 class="text-lg font-bold mb-4 text-blue-800">
+            <i class="fas fa-info-circle mr-2"></i>Hướng dẫn sử dụng nhật ký:
+        </h4>
+        <ul class="text-sm space-y-2">
+            <li>• <strong>Ghi ngay sau mỗi lệnh:</strong> Đừng để quá lâu, ký ức sẽ mờ nhạt</li>
+            <li>• <strong>Trung thực tuyệt đối:</strong> Nhật ký chỉ có giá trị khi bạn thành thật với chính mình</li>
+            <li>• <strong>Review định kỳ:</strong> Mỗi tuần đọc lại để tìm pattern và xu hướng</li>
+            <li>• <strong>Focus vào process:</strong> Quan trọng hơn kết quả thắng/thua là việc tuân thủ quy trình</li>
+        </ul>
     </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="bg-gray-800 text-white py-8 mt-12">
+<footer class="bg-gradient-to-r from-blue-800 to-blue-900 text-white py-12 mt-16">
     <div class="container mx-auto px-4 text-center">
-        <h3 class="text-2xl font-bold mb-4">
-            <i class="fas fa-chart-line mr-2"></i>
+        <h3 class="text-3xl font-bold mb-6">
+            <i class="fas fa-chart-line mr-3"></i>
             HỆ THỐNG DC7 TRADING
         </h3>
-        <p class="text-gray-300 mb-4">
-            "Kỷ luật + Kiên nhất + Cải tiến = Thành công bền vững"
+        <p class="text-xl text-blue-200 mb-6">
+            "Kỷ luật + Nhất quán + Cải tiến = Thành công bền vững"
         </p>
-        <div class="text-sm text-gray-400">
-            <p>✅ Phân tích hệ thống • ✅ Entry chính xác • ✅ Quản lý chặt chẽ • ✅ Đánh giá liên tục</p>
+        <div class="grid md:grid-cols-4 gap-4 text-sm">
+            <div class="bg-blue-700 p-4 rounded-lg">
+                <h4 class="font-bold mb-2">
+                    <i class="fas fa-search mr-2"></i>Phân tích
+                </h4>
+                <p>Hệ thống & khoa học</p>
+            </div>
+            <div class="bg-blue-700 p-4 rounded-lg">
+                <h4 class="font-bold mb-2">
+                    <i class="fas fa-crosshairs mr-2"></i>Entry
+                </h4>
+                <p>Chính xác & có cam kết</p>
+            </div>
+            <div class="bg-blue-700 p-4 rounded-lg">
+                <h4 class="font-bold mb-2">
+                    <i class="fas fa-tasks mr-2"></i>Quản lý
+                </h4>
+                <p>Chặt chẽ & linh hoạt</p>
+            </div>
+            <div class="bg-blue-700 p-4 rounded-lg">
+                <h4 class="font-bold mb-2">
+                    <i class="fas fa-chart-line mr-2"></i>Cải tiến
+                </h4>
+                <p>Liên tục & bền vững</p>
+            </div>
+        </div>
+        <div class="mt-8 text-blue-300">
+            <p><i class="fas fa-book mr-2"></i>Ghi nhật ký mỗi ngày - Đánh giá mỗi tuần - Cải tiến mỗi tháng</p>
         </div>
     </div>
 </footer>
@@ -602,17 +1230,46 @@
 </div>
 
 <script>
-// Simple interactivity for checkboxes
+// Interactive checkboxes with visual feedback
 document.addEventListener('DOMContentLoaded', function() {
     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
     checkboxes.forEach(checkbox => {
         checkbox.addEventListener('change', function() {
             if (this.checked) {
-                this.parentElement.style.backgroundColor = '#f0f9ff';
+                this.parentElement.style.backgroundColor = '#ecfdf5';
+                this.parentElement.style.borderLeft = '4px solid #10b981';
+                this.parentElement.style.paddingLeft = '12px';
+                this.parentElement.style.transition = 'all 0.3s ease';
             } else {
                 this.parentElement.style.backgroundColor = '';
+                this.parentElement.style.borderLeft = '';
+                this.parentElement.style.paddingLeft = '';
             }
         });
+    });
+
+    // Smooth scroll for internal navigation
+    const links = document.querySelectorAll('a[href^="#"]');
+    links.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Print friendly functionality
+    window.addEventListener('beforeprint', function() {
+        document.body.classList.add('print-mode');
+    });
+
+    window.addEventListener('afterprint', function() {
+        document.body.classList.remove('print-mode');
     });
 });
 </script>
